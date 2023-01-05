@@ -1,0 +1,1008 @@
+[{
+  "_id": {
+    "$oid": "6328348e74041f0d855647d1"
+  },
+  "user": {
+    "$oid": "6328348e74041f0d855647cf"
+  },
+  "skills": [],
+  "studies": [],
+  "professionnal_career": [],
+  "certifications": [],
+  "projets": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6328381b74041f0d8556487e"
+  },
+  "user": {
+    "$oid": "6328381b74041f0d8556487c"
+  },
+  "skills": [],
+  "studies": [],
+  "professionnal_career": [],
+  "certifications": [],
+  "projets": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "632838bb74041f0d85564899"
+  },
+  "user": {
+    "$oid": "632838ba74041f0d85564897"
+  },
+  "skills": [],
+  "studies": [],
+  "professionnal_career": [],
+  "certifications": [],
+  "projets": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "632839b874041f0d855648b7"
+  },
+  "user": {
+    "$oid": "632839b874041f0d855648b5"
+  },
+  "skills": [],
+  "studies": [],
+  "professionnal_career": [],
+  "certifications": [],
+  "projets": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63283a7374041f0d855648d4"
+  },
+  "user": {
+    "$oid": "63283a7374041f0d855648d2"
+  },
+  "skills": [],
+  "studies": [],
+  "professionnal_career": [],
+  "certifications": [],
+  "projets": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63283afc74041f0d855648f1"
+  },
+  "user": {
+    "$oid": "63283afc74041f0d855648ef"
+  },
+  "skills": [
+    "RedHat",
+    "HPE-Server",
+    "HPE-Storage",
+    "WIFI-6",
+    "Windows-Server",
+    "hardware",
+    "VEEAM"
+  ],
+  "studies": [
+    {
+      "establishment": "ISET Rades",
+      "section": "Informatique",
+      "diploma": "Licence appliquée en technologies de l’informatique : Développement système d'information",
+      "year": "2020",
+      "_id": {
+        "$oid": "632ac5854628308e15debb06"
+      }
+    }
+  ],
+  "professionnal_career": [
+    {
+      "period": "2021 - 2022",
+      "organization": "Groupe Prologic Holding",
+      "job": "Technicien supérieu",
+      "task_description": "-Assemblage, Installation, configuration et maintenance des serveurs. -Assemblage, Installation, configuration et maintenance MSA. -Assemblage, Installation, configuration et maintenance des ordinateurs. -Installation, configuration et maintenance des système Redhat (client, serveur). -Installation, configuration et maintenance des système Windows (client, serveur). -Installation et configuration ",
+      "_id": {
+        "$oid": "632ac5464628308e15debb01"
+      }
+    }
+  ],
+  "certifications": [
+    {
+      "year": "2021",
+      "domaine": "Veeam Sales Professional (VMSP)",
+      "_id": {
+        "$oid": "632ac6b34628308e15debb3f"
+      }
+    },
+    {
+      "year": "2021",
+      "domaine": "Veeam Technical Sales Professional (VMTSP)",
+      "_id": {
+        "$oid": "632ac6c14628308e15debb44"
+      }
+    },
+    {
+      "year": "2021",
+      "domaine": "Computer Hardware (expert)",
+      "_id": {
+        "$oid": "632ac6d34628308e15debb49"
+      }
+    },
+    {
+      "year": "2021",
+      "domaine": "Windows 10 (expert)",
+      "_id": {
+        "$oid": "632ac6e24628308e15debb4e"
+      }
+    },
+    {
+      "year": "2021",
+      "domaine": "PaperCut sales advanced",
+      "_id": {
+        "$oid": "632ac6f54628308e15debb58"
+      }
+    },
+    {
+      "year": "2021",
+      "domaine": "PaperCut tech foundation",
+      "_id": {
+        "$oid": "632ac7014628308e15debb5d"
+      }
+    },
+    {
+      "year": "2021",
+      "domaine": "Agile Methodology (Advanced)",
+      "_id": {
+        "$oid": "632ac70c4628308e15debb62"
+      }
+    },
+    {
+      "year": "2022",
+      "domaine": "HPE Standard ProLiant and Blade Server Service and Solution",
+      "_id": {
+        "$oid": "632ac71c4628308e15debb67"
+      }
+    }
+  ],
+  "projets": [
+    {
+      "organization": "USAID",
+      "title": "DCOP1",
+      "description": "Relie un total de 377 salles de conférences à travers le pays, couvrant les municipalités, les gouvernorats, le ministère des affaires locales et de l'Environnement et le centre de formation du ministère",
+      "_id": {
+        "$oid": "632ac5ca4628308e15debb0b"
+      }
+    },
+    {
+      "organization": "Campus Monastir",
+      "title": "Campus Monastir",
+      "description": "Installation d'une solution wifi huawei composer par des Huawei - Wi-Fi 6 Access Point, Huawei Switch et Huawei Unité De Contrôleur D'accès Wi-fi.",
+      "_id": {
+        "$oid": "632ac6094628308e15debb26"
+      }
+    },
+    {
+      "organization": "USAID",
+      "title": "DCOP2",
+      "description": "Assemblage, installation et configuration de 4 Server - HP DL380 G10, 1150 HP ProDesk 400 G7 PC Desktop, 1150 HP Elite Display E243m 23.8\" HD Monitor, 350 Range Extender AC200 Mesh DRA-2060, 350 Printer-HPLaserJet Enterprise MFP M725dn, 350 HP 440 G8 Laptop.",
+      "_id": {
+        "$oid": "632ac63c4628308e15debb30"
+      }
+    },
+    {
+      "organization": "Campus Gabes",
+      "title": "Campus Gabes",
+      "description": "Installation d'une solution wifi huawei composer par des Huawei - Wi-Fi 6 Access Point, Huawei Switch et Huawei Unité De Contrôleur D'accès Wi-fi.",
+      "_id": {
+        "$oid": "632ac66f4628308e15debb35"
+      }
+    },
+    {
+      "organization": "Tunisie Télécom",
+      "title": "Tunisie Télécom",
+      "description": "Mise à jour des tablettes android 8 vers Android 1",
+      "_id": {
+        "$oid": "632ac6944628308e15debb3a"
+      }
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63283b5d74041f0d85564905"
+  },
+  "user": {
+    "$oid": "63283b5d74041f0d85564903"
+  },
+  "skills": [
+    "pHP",
+    "C",
+    "C++",
+    "PYTHON",
+    "Arduino",
+    "Esp32",
+    "raspberry"
+  ],
+  "studies": [
+    {
+      "establishment": "esprit",
+      "section": "cloud",
+      "diploma": "diplome",
+      "year": "2022",
+      "_id": {
+        "$oid": "632ac7414628308e15debb6c"
+      }
+    },
+    {
+      "establishment": "issat mateur",
+      "section": "système embarqué et internet des objets",
+      "diploma": "diplôme national ",
+      "year": "2022",
+      "_id": {
+        "$oid": "632ac7fb4628308e15debb86"
+      }
+    }
+  ],
+  "professionnal_career": [
+    {
+      "period": "2022 - 2023",
+      "organization": "Prologic",
+      "job": "Technicien supérieur",
+      "task_description": "-Installation OS sur 75 Pcs\n-Test de bon fonctionnement\n-Créer un prototype capable de contrôler    de superviser l'infrastructure du Data Center a l'aide de L'IOT\n-Assemblage, Installation, configuration et   maintenance des ordinateurs.\n-Installation et maintenance des serveurs.\n-Installation, configuration et maintenance des système Windows (client, serveur).\n-Installation et configuration veea",
+      "_id": {
+        "$oid": "632ac6ee4628308e15debb54"
+      }
+    }
+  ],
+  "certifications": [],
+  "projets": [
+    {
+      "organization": "ooredoo",
+      "title": "ooredoo",
+      "description": "Installation et maintenance des serveurs",
+      "_id": {
+        "$oid": "632ac5e14628308e15debb10"
+      }
+    },
+    {
+      "organization": "QNB",
+      "title": "QNB",
+      "description": "-Installation OS sur 75 Pcs\n-Test de bon fonctionnement\n\n",
+      "_id": {
+        "$oid": "632ac6044628308e15debb21"
+      }
+    },
+    {
+      "organization": "Prologic IOT",
+      "title": "Prologic IOT",
+      "description": "La réalisation d'un système de contrôle de supervision l'infrastructure d'un Data Center avec les cartes ARDUINO, RASPBERRY et ESP32.",
+      "_id": {
+        "$oid": "632ac62b4628308e15debb2b"
+      }
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63283bc874041f0d8556491b"
+  },
+  "user": {
+    "$oid": "63283bc874041f0d85564919"
+  },
+  "skills": [],
+  "studies": [],
+  "professionnal_career": [],
+  "certifications": [],
+  "projets": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63283c4674041f0d8556493f"
+  },
+  "user": {
+    "$oid": "63283c4674041f0d8556493d"
+  },
+  "skills": [],
+  "studies": [],
+  "professionnal_career": [
+    {
+      "period": "2019 - 2021",
+      "organization": "Gerance Informatique",
+      "job": "Technicien Maintenance et Reseaux",
+      "task_description": "- infogerance\n- integration solution de securite ( ESET NOD 32)\n- integration solution de sauvegarde ( Veeam backup and replication)\n- maintenance hardware et software\n- cablage reseaux",
+      "_id": {
+        "$oid": "633180e44628308e15debf7f"
+      }
+    },
+    {
+      "period": "2021 - 2022",
+      "organization": "Prologic Tunisie",
+      "job": "Technicien System",
+      "task_description": "- integration solution de securite symantec sur windows et Linux ( ubuntu server et desktop, suse, centos)\n- integration solution de sauvegarde veeam agent sur Linux et veeam backup and replication sur windows\n- installation windows server 2012r2 2016 2019\n- creation Des VMs sur vmware esxi 6.6 et 6.7\n- creation Des VMs sur hyper-v\n- migration Des VMs de vmware vers esxi",
+      "_id": {
+        "$oid": "63318e5c4628308e15debf84"
+      }
+    }
+  ],
+  "certifications": [],
+  "projets": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "632844c374041f0d85564958"
+  },
+  "user": {
+    "$oid": "632844c374041f0d85564956"
+  },
+  "skills": [
+    "c",
+    "c++",
+    "python",
+    "IOT"
+  ],
+  "studies": [
+    {
+      "establishment": "ISSAT MATEUR",
+      "section": "Licence",
+      "diploma": "Ingénierie des Système Informatique",
+      "year": "2022",
+      "_id": {
+        "$oid": "632d661d4628308e15debd65"
+      }
+    }
+  ],
+  "professionnal_career": [
+    {
+      "period": "2022 - 2022",
+      "organization": "Groupe Prologic Holding",
+      "job": "Administrateur Système ",
+      "task_description": "solveur des problèmes IT",
+      "_id": {
+        "$oid": "632d65e14628308e15debd61"
+      }
+    }
+  ],
+  "certifications": [
+    {
+      "year": "2022",
+      "domaine": "Systèmes embarques et internet des objets",
+      "_id": {
+        "$oid": "632d66b24628308e15debd80"
+      }
+    }
+  ],
+  "projets": [
+    {
+      "organization": "OOREDOO",
+      "title": "SMP OOREDOO",
+      "description": ".",
+      "_id": {
+        "$oid": "632d665c4628308e15debd75"
+      }
+    },
+    {
+      "organization": "QNB",
+      "title": "Migration des PCs",
+      "description": "Migration Des PCs",
+      "_id": {
+        "$oid": "632d668a4628308e15debd7a"
+      }
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6328455b74041f0d85564973"
+  },
+  "user": {
+    "$oid": "6328455b74041f0d85564971"
+  },
+  "skills": [],
+  "studies": [
+    {
+      "establishment": "Iset rades",
+      "section": "réseaux informatique ",
+      "diploma": "licence appliquée en technologie de l'informatique ",
+      "year": "2021",
+      "_id": {
+        "$oid": "632d6a3f4628308e15debdcd"
+      }
+    },
+    {
+      "establishment": "ISI ariena ",
+      "section": "Sécurité des Systèmes d'Informations et des Infrastructures",
+      "diploma": "Mastères Professionnel en Sécurité Des Systèmes D'Informations Et Des Infrastructures",
+      "year": "2023",
+      "_id": {
+        "$oid": "632d6acd4628308e15debdd1"
+      }
+    }
+  ],
+  "professionnal_career": [
+    {
+      "period": "2021 - ",
+      "organization": "prologic",
+      "job": "Technical Infrastructure System ",
+      "task_description": " ",
+      "_id": {
+        "$oid": "632d694c4628308e15debdb6"
+      }
+    }
+  ],
+  "certifications": [
+    {
+      "year": "2021",
+      "domaine": "Cisco : CyberSecurity Essentials",
+      "_id": {
+        "$oid": "632d6ca44628308e15debddb"
+      }
+    },
+    {
+      "year": "2020",
+      "domaine": "Cisco : CCNA1 Routing And Switching",
+      "_id": {
+        "$oid": "632d6cd94628308e15debde4"
+      }
+    },
+    {
+      "year": "2022",
+      "domaine": "HPE Standard ProLiant and Blade Server Service and Solution",
+      "_id": {
+        "$oid": "632d6cfb4628308e15debde9"
+      }
+    },
+    {
+      "year": "2022",
+      "domaine": "storage foundation",
+      "_id": {
+        "$oid": "632d6d104628308e15debdee"
+      }
+    }
+  ],
+  "projets": [
+    {
+      "organization": "USAID",
+      "title": "DECOP",
+      "description": "Installation système d’exploitation sur 1150 PC",
+      "_id": {
+        "$oid": "632d6da64628308e15debdfc"
+      }
+    },
+    {
+      "organization": "ATB",
+      "title": "MPS ATB",
+      "description": "Installation d’un nouveau système d’impression papercut",
+      "_id": {
+        "$oid": "632d6dcc4628308e15debe01"
+      }
+    },
+    {
+      "organization": "Magasin Général ",
+      "title": "MPS MG",
+      "description": "Installation d’un nouveau système d’impression papercut",
+      "_id": {
+        "$oid": "632d6e244628308e15debe06"
+      }
+    },
+    {
+      "organization": "Tunisie Télécom ",
+      "title": "Tunisie Télécom",
+      "description": "Mise à jour des tablettes android 8 vers Android 10",
+      "_id": {
+        "$oid": "632d6e634628308e15debe0b"
+      }
+    },
+    {
+      "organization": "Azur Office",
+      "title": "Azur Office",
+      "description": "Assemblage et configuration des serveurs",
+      "_id": {
+        "$oid": "632d6e944628308e15debe10"
+      }
+    },
+    {
+      "organization": "Sagemcom",
+      "title": "Sagemcom",
+      "description": "Configuration et déploiement Synergy et MSA",
+      "_id": {
+        "$oid": "632d6ecd4628308e15debe15"
+      }
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6328465274041f0d85564989"
+  },
+  "user": {
+    "$oid": "6328465274041f0d85564987"
+  },
+  "skills": [
+    "-hyper-V",
+    "microsoft",
+    "cisco",
+    "C",
+    "C++"
+  ],
+  "studies": [
+    {
+      "establishment": "ISTIC",
+      "section": "telecommunication ",
+      "diploma": "licence fondamentale en télécommunication ",
+      "year": "2011",
+      "_id": {
+        "$oid": "632c7bd54628308e15debc84"
+      }
+    },
+    {
+      "establishment": "ISTIC",
+      "section": "telecommunication ",
+      "diploma": "Master Professionnel Co-construit  en sécurité des réseaux et communications Embarqués",
+      "year": "2020",
+      "_id": {
+        "$oid": "632c7c3b4628308e15debc89"
+      }
+    }
+  ],
+  "professionnal_career": [
+    {
+      "period": "2019 - 2019",
+      "organization": "office de l'aviation civile et des aéroports (OACA)",
+      "job": "stagiaire",
+      "task_description": ".",
+      "_id": {
+        "$oid": "632c7adc4628308e15debc57"
+      }
+    },
+    {
+      "period": "2020 - 2020",
+      "organization": "embedded solutions and advanced technologie (ESAT)",
+      "job": "stagiaire",
+      "task_description": "-projet fin d'étude ( Etude et conception d'antennes  dipôle multifréquence pour les systèmes de communication)",
+      "_id": {
+        "$oid": "632c7b7c4628308e15debc7f"
+      }
+    },
+    {
+      "period": "2022 - 2023",
+      "organization": "prologic",
+      "job": "Technical infrastructure system",
+      "task_description": ".",
+      "_id": {
+        "$oid": "632d68be4628308e15debdac"
+      }
+    }
+  ],
+  "certifications": [
+    {
+      "year": "2022",
+      "domaine": "NSE1",
+      "_id": {
+        "$oid": "632c7c544628308e15debc8e"
+      }
+    },
+    {
+      "year": "2021",
+      "domaine": "lifelong Learning",
+      "_id": {
+        "$oid": "632c7c704628308e15debc93"
+      }
+    },
+    {
+      "year": "2022",
+      "domaine": "Scrum Foundation Professsional",
+      "_id": {
+        "$oid": "632c7c8e4628308e15debc98"
+      }
+    },
+    {
+      "year": "2018",
+      "domaine": "Big data Engineer-Explorer Award ",
+      "_id": {
+        "$oid": "632c7cbc4628308e15debc9d"
+      }
+    }
+  ],
+  "projets": [
+    {
+      "organization": "embedded solutions and advanced technologie (ESAT)",
+      "title": "Etude et conception d'antennes dipôle multifréquence pour les systèmes de communication",
+      "description": ".",
+      "_id": {
+        "$oid": "632d69084628308e15debdb1"
+      }
+    },
+    {
+      "organization": "prologic",
+      "title": "mise en place d'une infrastructure hautement disponible automatisé basé sur les technologies microsoft (hyper-V,SCVMM...)",
+      "description": " ",
+      "_id": {
+        "$oid": "632d69ae4628308e15debdbb"
+      }
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "632847f574041f0d8556499f"
+  },
+  "user": {
+    "$oid": "632847f474041f0d8556499d"
+  },
+  "skills": [],
+  "studies": [],
+  "professionnal_career": [],
+  "certifications": [],
+  "projets": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6328486074041f0d855649b3"
+  },
+  "user": {
+    "$oid": "6328486074041f0d855649b1"
+  },
+  "skills": [],
+  "studies": [
+    {
+      "establishment": "ISET",
+      "section": "Informatique",
+      "diploma": "reseau service informatique",
+      "year": "2018",
+      "_id": {
+        "$oid": "6331b2c74628308e15debfa9"
+      }
+    },
+    {
+      "establishment": "FST",
+      "section": "informatique",
+      "diploma": "master Réseau system Télécommunication ",
+      "year": "2022",
+      "_id": {
+        "$oid": "6331b2f54628308e15debfae"
+      }
+    }
+  ],
+  "professionnal_career": [
+    {
+      "period": "2019 - 2022",
+      "organization": "PROLOGIC",
+      "job": "administrateur Réseaux ",
+      "task_description": "Administrateur Réseaux ",
+      "_id": {
+        "$oid": "6331b29a4628308e15debfa4"
+      }
+    },
+    {
+      "period": "2018 - 2019",
+      "organization": "ARSLEN ",
+      "job": "Technicien parc informatique",
+      "task_description": "Technicien Parc Informatique",
+      "_id": {
+        "$oid": "6331b3fd4628308e15dec004"
+      }
+    }
+  ],
+  "certifications": [
+    {
+      "year": "2021",
+      "domaine": "HCIP WLAN",
+      "_id": {
+        "$oid": "6331b3114628308e15debfb3"
+      }
+    },
+    {
+      "year": "2021",
+      "domaine": "NSE 4",
+      "_id": {
+        "$oid": "6331b3404628308e15debfc1"
+      }
+    },
+    {
+      "year": "2022",
+      "domaine": "HCIA WLAN",
+      "_id": {
+        "$oid": "6331b34c4628308e15debfc6"
+      }
+    },
+    {
+      "year": "2022",
+      "domaine": "HCIA DATACOM",
+      "_id": {
+        "$oid": "6331b35a4628308e15debfcb"
+      }
+    },
+    {
+      "year": "2022",
+      "domaine": "ARUBA ACSA",
+      "_id": {
+        "$oid": "6331b36b4628308e15debfd0"
+      }
+    },
+    {
+      "year": "2021",
+      "domaine": "DCS SWITCHING DLINK",
+      "_id": {
+        "$oid": "6331b3854628308e15debfd5"
+      }
+    }
+  ],
+  "projets": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "632848c074041f0d855649c4"
+  },
+  "user": {
+    "$oid": "632848c074041f0d855649c2"
+  },
+  "skills": [
+    "WLAN ( Huawei, Aruba, FortiAPs...) Switching (Huawei, HPE, Aruba, FortiSwiitch, Cisco., Switch TOR ...) DHCP Stacking Management des APs (Huawei, Aruba ...) LAN",
+    "Firewall (Fortinet, Cyberoom, Huawei., Pfsense ...) VPN Filtrage (Web + App) Gestion des ACLs",
+    "Virtualisation VMware (vSphere, vCenter, ESXI...) NSX Veeam Windows server ( AD+ DHCP + DNS ...) Microsoft Hyper V Microsoft 365 Serveurs"
+  ],
+  "studies": [
+    {
+      "establishment": "ISTIC ",
+      "section": "TELECOM",
+      "diploma": "Licence appliquée en réseau et télécommunication ",
+      "year": "2019",
+      "_id": {
+        "$oid": "632d7f544628308e15debeab"
+      }
+    },
+    {
+      "establishment": "ISTIC ",
+      "section": "TELECOM",
+      "diploma": "Master Professionnel Co-construit en Sécurité des Réseaux et Communications Embarqués",
+      "year": "2021",
+      "_id": {
+        "$oid": "632d7f724628308e15debeb0"
+      }
+    }
+  ],
+  "professionnal_career": [
+    {
+      "period": "2021 - 2022",
+      "organization": "Groupe Prologic Holding",
+      "job": "Administrateur réseau et Système ",
+      "task_description": " ",
+      "_id": {
+        "$oid": "632d79f24628308e15debe2a"
+      }
+    }
+  ],
+  "certifications": [
+    {
+      "year": "2020",
+      "domaine": "cCNA V7 NIV1",
+      "_id": {
+        "$oid": "632d7b794628308e15debe58"
+      }
+    },
+    {
+      "year": "2021",
+      "domaine": "BIG DATA V2",
+      "_id": {
+        "$oid": "632d7b914628308e15debe5e"
+      }
+    },
+    {
+      "year": "2022",
+      "domaine": "ARUBA CERTIFIED SWITCHING",
+      "_id": {
+        "$oid": "632d7bb74628308e15debe62"
+      }
+    }
+  ],
+  "projets": [
+    {
+      "organization": "OOREDOO ",
+      "title": " ",
+      "description": " ",
+      "_id": {
+        "$oid": "632d7e1d4628308e15debe67"
+      }
+    },
+    {
+      "organization": "SESAM",
+      "title": " ",
+      "description": " ",
+      "_id": {
+        "$oid": "632d7e274628308e15debe6c"
+      }
+    },
+    {
+      "organization": "Group Smart",
+      "title": " ",
+      "description": " ",
+      "_id": {
+        "$oid": "632d7e384628308e15debe71"
+      }
+    },
+    {
+      "organization": "Campus manouba",
+      "title": " ",
+      "description": " ",
+      "_id": {
+        "$oid": "632d7e8e4628308e15debe80"
+      }
+    },
+    {
+      "organization": "Campus Tunis",
+      "title": " ",
+      "description": " ",
+      "_id": {
+        "$oid": "632d7eab4628308e15debe89"
+      }
+    },
+    {
+      "organization": "Campus Monastir",
+      "title": " ",
+      "description": " ",
+      "_id": {
+        "$oid": "632d7ec14628308e15debe93"
+      }
+    }
+  ],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6328492e74041f0d855649da"
+  },
+  "user": {
+    "$oid": "6328492e74041f0d855649d8"
+  },
+  "skills": [],
+  "studies": [],
+  "professionnal_career": [],
+  "certifications": [],
+  "projets": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6328498c74041f0d855649ef"
+  },
+  "user": {
+    "$oid": "6328498c74041f0d855649ed"
+  },
+  "skills": [],
+  "studies": [
+    {
+      "establishment": "L'institut supérieur des études technologiques de nabeul",
+      "section": "technologie de l'informatique ",
+      "diploma": "Licence appliquée en Réseaux et services Informatiques",
+      "year": "2021",
+      "_id": {
+        "$oid": "6329e7314628308e15deb9ef"
+      }
+    },
+    {
+      "establishment": "TEK-UP",
+      "section": " Sécurité des Systèmes Informatiques et Réseaux",
+      "diploma": " Sécurité Des Systèmes Informatiques Et Réseaux",
+      "year": "2022",
+      "_id": {
+        "$oid": "6329e7a44628308e15deba09"
+      }
+    }
+  ],
+  "professionnal_career": [],
+  "certifications": [],
+  "projets": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "632849e874041f0d85564a05"
+  },
+  "user": {
+    "$oid": "632849e874041f0d85564a03"
+  },
+  "skills": [],
+  "studies": [],
+  "professionnal_career": [],
+  "certifications": [],
+  "projets": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63284a4574041f0d85564a1f"
+  },
+  "user": {
+    "$oid": "63284a4574041f0d85564a1d"
+  },
+  "skills": [],
+  "studies": [],
+  "professionnal_career": [],
+  "certifications": [],
+  "projets": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "63284a9174041f0d85564a33"
+  },
+  "user": {
+    "$oid": "63284a9174041f0d85564a31"
+  },
+  "skills": [],
+  "studies": [],
+  "professionnal_career": [],
+  "certifications": [],
+  "projets": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6332fe13857ec5f395b01a2f"
+  },
+  "user": {
+    "$oid": "6332fe13857ec5f395b01a2d"
+  },
+  "skills": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Java",
+    "Node JS",
+    "React js",
+    "React native",
+    "Spring Boot",
+    "Angular",
+    "Android",
+    "Agile Scrum"
+  ],
+  "studies": [
+    {
+      "establishment": "lycée Mhamdia 2",
+      "section": "Informatique",
+      "diploma": "Baccalauréat ",
+      "year": "2017",
+      "_id": {
+        "$oid": "63330206857ec5f395b01a5f"
+      }
+    },
+    {
+      "establishment": "Institut Supérieur Des Etudes Technologique De Bizerte",
+      "section": "Développements Systèmes d'informations",
+      "diploma": "Licence Nationale En Développements Systèmes D'informations ",
+      "year": "2022",
+      "_id": {
+        "$oid": "633302a0857ec5f395b01a6d"
+      }
+    }
+  ],
+  "professionnal_career": [
+    {
+      "period": "2017 - 2017",
+      "organization": "DevClick",
+      "job": "Développement web ",
+      "task_description": "Développeur des applications ",
+      "_id": {
+        "$oid": "63330318857ec5f395b01a76"
+      }
+    }
+  ],
+  "certifications": [],
+  "projets": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6336aada9dbcb8a1dcd75be7"
+  },
+  "user": {
+    "$oid": "6336aada9dbcb8a1dcd75be5"
+  },
+  "skills": [],
+  "studies": [],
+  "professionnal_career": [],
+  "certifications": [],
+  "projets": [],
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "6336d18ed300d73fb001ccf2"
+  },
+  "user": {
+    "$oid": "6336d18ed300d73fb001ccf0"
+  },
+  "skills": [],
+  "studies": [],
+  "professionnal_career": [],
+  "certifications": [],
+  "projets": [],
+  "__v": 0
+}]

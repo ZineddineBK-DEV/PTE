@@ -1,0 +1,15 @@
+[{
+  "_id": {
+    "$oid": "6302b09dd26b9a6a72efa53e"
+  },
+  "label": "conferance",
+  "location": "prologic",
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "631b00da05b618e19b8f7bff"
+  },
+  "label": "Smart Host",
+  "location": "Immeuble SIMOP",
+  "__v": 0
+}]

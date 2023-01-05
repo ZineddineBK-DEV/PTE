@@ -1,0 +1,75 @@
+{
+  "name": "pte-dahboard",
+  "version": "0.1.0",
+  "proxy": "http://localhost:3001",
+  "private": true,
+  "dependencies": {
+    "@fullcalendar/daygrid": "^5.11.2",
+    "@fullcalendar/interaction": "^5.11.2",
+    "@fullcalendar/list": "^5.11.2",
+    "@fullcalendar/react": "^5.11.2",
+    "@fullcalendar/timegrid": "^5.11.2",
+    "@react-pdf-viewer/core": "^3.1.0",
+    "@react-pdf-viewer/default-layout": "^3.1.0",
+    "@reduxjs/toolkit": "^1.8.2",
+    "@testing-library/jest-dom": "^5.16.4",
+    "@testing-library/react": "^13.3.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@tippyjs/react": "^4.2.6",
+    "axios": "^0.27.2",
+    "bootstrap": "^5.2.1",
+    "buffer": "^6.0.3",
+    "classnames": "^2.3.1",
+    "core-js": "^3.23.1",
+    "framer-motion": "^6.5.1",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "pdfjs-dist": "^2.16.105",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.5.0",
+    "react-datetime": "^3.1.1",
+    "react-dom": "^18.2.0",
+    "react-icons": "^4.4.0",
+    "react-jwt": "^1.1.6",
+    "react-places-autocomplete": "^7.3.0",
+    "react-redux": "^8.0.2",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "react-select": "^5.4.0",
+    "react-spinners-kit": "^1.9.1",
+    "react-to-pdf": "^0.0.14",
+    "react-to-print": "^2.14.7",
+    "react-toastify": "^9.0.5",
+    "web-vitals": "^2.1.4",
+    "xlsx": "^0.18.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.3",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "tailwindcss": "^3.1.4"
+  }
+}
