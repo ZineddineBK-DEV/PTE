@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/ZineddineBK-DEV/PTE.git"
   },
   "keywords": [
     "123"
   ],
-  "author": "",
+  "author": "ZineddineBK-DEV",
   "license": "",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/ZineddineBK-DEV/PTE/issues"
   },
   "homepage": "",
   "dependencies": {

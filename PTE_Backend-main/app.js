@@ -29,7 +29,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //=========== connecting to database ==============
 mongoose
   .connect(
-    "mongodb://localhost:27017",
+    "mongodb+srv://pteCluster:pteCluster@pte.uecwzfo.mongodb.net/",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
@@ -52,10 +52,6 @@ app.use("/api/material/room", roomRoute);
 app.use("/api/material/vehicle", vehicleRoute);
 app.use("/api/material/virtualization", virtualizationEnvRoute);
 app.use("/api/career", careerRoute);
-
-
-
-
 
 // ======== exporting app ========
 module.exports = app;
