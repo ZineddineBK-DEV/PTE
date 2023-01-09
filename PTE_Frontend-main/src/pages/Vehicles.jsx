@@ -4,9 +4,6 @@ import { setShowHeaders } from "../features/global";
 import { useSelector, useDispatch } from "react-redux";
 import { Outlet, NavLink } from "react-router-dom";
 import { MdOutlineDelete } from "react-icons/md";
-import { FaTransgender } from "react-icons/fa";
-import authStyle from "../authentication.module.css";
-import cx from "classnames";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -53,17 +50,7 @@ const Vehicles = () => {
   const onSelectVehicleToDelete = (car) => {
     setVehicleToDelete(car);
     setDeleteVehicleModalOpen(true);
-  };
-  const [formData, setFormData] = useState({
-
-  });
-
-  const onChange = (e) => {
-    setFormData((prevState) => ({
-      ...prevState,
-      [e.target.name]: e.target.value,
-    }));
-  };
+  }; 
   function handleKeyDown(e) {
     if (e.key !== "Enter") return;
     const value = e.target.value;
