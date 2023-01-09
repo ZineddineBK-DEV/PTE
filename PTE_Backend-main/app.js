@@ -27,9 +27,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 //app.use(cors);
 
 //=========== connecting to database ==============
+mongoose.set("strictQuery", true);
 mongoose
   .connect(
-    "mongodb+srv://pteCluster:pteCluster@pte.uecwzfo.mongodb.net/",
+    "mongodb+srv://pteCluster:pteCluster@pte.uecwzfo.mongodb.net/PTE-db?retryWrites=true&w=majority",
     {
       useNewUrlParser: true,
       useUnifiedTopology: true,
