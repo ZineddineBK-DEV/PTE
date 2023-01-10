@@ -1,5 +1,4 @@
 import { Link, useNavigate } from "react-router-dom";
-import { MdAlternateEmail, MdPassword } from "react-icons/md";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { toast } from "react-toastify";
@@ -87,135 +86,135 @@ function Login() {
   };
 
   return user ? null : (
-    <>
-      
-    
-       <div className="w-full h-full flex fixed flex-col login_screen">
-      
-       <div className="w-full fixed mt--1 flex flex-col justify-center">
+
+
+
+    <div className="w-full h-full flex fixed flex-col login_screen">
+
+      <div className="w-full fixed mt--1 flex flex-col justify-center">
         <img
           src={logo}
           alt="LOGO"
           className="h-28 w-28 m-auto p-2"
-          style={{ height: "25%" , width:"15%"}}
-          
+          style={{ height: "25%", width: "15%" }}
+
         />
-        
+
       </div>
-        
-        <section className={cx(authStyle["ftco-section"])}>
 
-          <div className={cx(authStyle["_container"])}>
-            <div
-              className={cx(
-                authStyle["row"],
-                authStyle["justify-content-center"]
-              )}
-            >
-              <div className="m-auto py-20  w-full h-full fixed justify-center " >
-                <div className="w-full max-w-md m-auto bg-white rounded-lg border shadow py-4 px-8">
-                 
+      <section className={cx(authStyle["ftco-section"])}>
+
+        <div className={cx(authStyle["_container"])}>
+          <div
+            className={cx(
+              authStyle["row"],
+              authStyle["justify-content-center"]
+            )}
+          >
+            <div className="m-auto py-20  w-full h-full justify-center " >
+              <div className="w-full max-w-md m-auto bg-white rounded-lg border shadow py-4 px-8">
+
                 <p
-          className=" text-xl font-semibold text-center font-serif "
-          style={{ color: "#03AEEF" }}
-        >
-          Account Login
-        </p><br></br>
-                  <p className={cx(authStyle["text-center"])}>
-                    Sign in by entering the informations below
-                  </p>
-                  <form
-                    onSubmit={onSubmit}
-                    className={cx(authStyle["login-form"])}
-                  >
-                    <div className="relative mt-4">
-            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-              <HiOutlineMail className="w-5 h-5 text-gray-500 dark:text-gray-400" />
-            </div>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={email}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="name@example.com"
-              onChange={onChange}
-            />
-          </div>
-          <div className="relative mt-4">
-            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-              <FiLock className="w-5 h-5 text-gray-500 dark:text-gray-400" />
-            </div>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              value={password}
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              placeholder="********"
-              onChange={onChange}
-            />
-          </div>
-                    <div
-                      className={cx(
-                        authStyle["form-group"],
-                        authStyle["d-md-flex"]
-                      )}
-                    >
-                      <div
-                        className={cx(
-                          authStyle["w-100"],
-                          authStyle["text-md-right"]
-                        )}
-                      >
-                        <span
-                          onClick={onForgotPassword}
-                          to="#"
-                          className={authStyle.link}
-                        >
-                          Forgot Password
-                        </span>
-                      </div>
+                  className=" text-xl font-semibold text-center font-serif "
+                  style={{ color: "#03AEEF" }}
+                >
+                  Account Login
+                </p><br></br>
+                <p className={cx(authStyle["text-center"])}>
+                  Sign in by entering the informations below
+                </p>
+                <form
+                  onSubmit={onSubmit}
+                  className={cx(authStyle["login-form"])}
+                >
+                  <div className="relative mt-4">
+                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                      <HiOutlineMail className="w-5 h-5 text-gray-500 dark:text-gray-400" />
                     </div>
-                    <div className={cx(authStyle["form-group"])}>
-                      <button
-                        type="submit"
-                        className={cx(
-                          authStyle["btn"],
-                          authStyle["form-control"],
-                          authStyle["btn-primary"],
-                          authStyle["rounded"],
-
-                          authStyle["px-3"]
-                        )}
-                      >
-                        Login
-                      </button>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={email}
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="name@example.com"
+                      onChange={onChange}
+                    />
+                  </div>
+                  <div className="relative mt-4">
+                    <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                      <FiLock className="w-5 h-5 text-gray-500 dark:text-gray-400" />
                     </div>
-                  </form>
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      value={password}
+                      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                      placeholder="********"
+                      onChange={onChange}
+                    />
+                  </div>
                   <div
                     className={cx(
-                      authStyle["w-100"],
-                      authStyle["text-center"],
-                      authStyle["md-4"],
-                      authStyle["text"]
+                      authStyle["form-group"],
+                      authStyle["d-md-flex"]
                     )}
                   >
-                    <p className={cx(authStyle["mb-0"])}>
-                      Don't have an account?
-                    </p>
-                    <Link to="/register" className="link">
-                      Sign Up
-                    </Link>
+                    <div
+                      className={cx(
+                        authStyle["w-100"],
+                        authStyle["text-md-right"]
+                      )}
+                    >
+                      <span
+                        onClick={onForgotPassword}
+                        to="#"
+                        className={authStyle.link}
+                      >
+                        Forgot Password
+                      </span>
+                    </div>
                   </div>
+                  <div className={cx(authStyle["form-group"])}>
+                    <button
+                      type="submit"
+                      className={cx(
+                        authStyle["btn"],
+                        authStyle["form-control"],
+                        authStyle["btn-primary"],
+                        authStyle["rounded"],
+
+                        authStyle["px-3"]
+                      )}
+                    >
+                      Login
+                    </button>
+                  </div>
+                </form>
+                <div
+                  className={cx(
+                    authStyle["w-100"],
+                    authStyle["text-center"],
+                    authStyle["md-4"],
+                    authStyle["text"]
+                  )}
+                >
+                  <p className={cx(authStyle["mb-0"])}>
+                    Don't have an account?
+                  </p>
+                  <Link to="/register" className="link">
+                    Sign Up
+                  </Link>
                 </div>
               </div>
-            
             </div>
+
           </div>
-        </section>
-      </div>
-    </>
+        </div>
+      </section>
+    </div>
+
   );
 }
 

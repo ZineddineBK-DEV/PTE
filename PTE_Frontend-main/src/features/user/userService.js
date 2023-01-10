@@ -48,17 +48,6 @@ const deleteUserById = async (token, id) => {
   return response.data;
 };
 
-// //get  sign up requests
-// const getSignupRequests = async (token) => {
-//   const config = {
-//     headers: {
-//       Authorization: `Bearer ${token}`,
-//     },
-//   };
-//   const response = await axios.get(API_URL + `signup/requests`, config);
-
-//   return response.data;
-// };
 
 // confirm sign up request
 export const confirmSignUp = async (id, token) => {

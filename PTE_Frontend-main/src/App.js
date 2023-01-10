@@ -1,4 +1,4 @@
-import {React } from 'react';
+import { React } from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { ToastContainer } from "react-toastify";
@@ -28,7 +28,7 @@ import {
 
 import {
   Home,
-Organigramme,
+  Organigramme,
   Employees,
   SousTraitant,
   ActionPlan,
@@ -41,7 +41,9 @@ Organigramme,
   TechnicalTeam,
   VerificationCode,
   ChangePassword,
-} from "./pages";
+  
+} 
+from "./pages";
 import "./App.css";
 
 const App = () => {
@@ -100,9 +102,9 @@ const App = () => {
                     </GuardedRoute>
                   }
                 />
-            
+
                 {/* pages  */}
-              
+
                 <Route
                   path="/employees"
                   element={
@@ -119,24 +121,24 @@ const App = () => {
                     </GuardedRoute>
                   }
                 />
-                    <Route
+                <Route
                   path="/organigramme"
                   exact
                   element={
                     <GuardedRoute>
-                      <Organigramme/> 
+                      <Organigramme />
                     </GuardedRoute>
                   }
-                />  
-                  <Route
+                />
+                <Route
                   path="/ActionPlan"
                   element={
                     <GuardedRoute>
-                      <ActionPlan/>
+                      <ActionPlan />
                     </GuardedRoute>
                   }
                 >
-                   <Route
+                  <Route
                     path="events/:id"
                     element={
                       <GuardedRoute>
@@ -145,9 +147,9 @@ const App = () => {
                     }
                   />
                 </Route>
-              
-              
-                
+
+
+
 
                 <Route
                   path="/registerRequests"
@@ -287,23 +289,23 @@ const App = () => {
             }
           />
 
-<Route
-                  path="/sousTraitant"
-                  element={
-                    <GuardedRoute>
-                      <SousTraitant />
-                    </GuardedRoute>
-                  }
-                />
-                    <Route
-                  path="/organigramme"
-                  exact
-                  element={
-                    <GuardedRoute>
-                      <Organigramme/> 
-                    </GuardedRoute>
-                  }
-                />  
+          <Route
+            path="/sousTraitant"
+            element={
+              <GuardedRoute>
+                <SousTraitant />
+              </GuardedRoute>
+            }
+          />
+          <Route
+            path="/organigramme"
+            exact
+            element={
+              <GuardedRoute>
+                <Organigramme />
+              </GuardedRoute>
+            }
+          />
           <Route
             path="/registerRequests"
             element={
@@ -374,7 +376,7 @@ const App = () => {
             path="/ActionPlan"
             element={
               <GuardedRoute>
-                <ActionPlan/>
+                <ActionPlan />
               </GuardedRoute>
             }
           >
@@ -382,7 +384,7 @@ const App = () => {
               path="events/:id"
               element={
                 <GuardedRoute>
-                  <ActionPlanEvent/>
+                  <ActionPlanEvent />
                 </GuardedRoute>
               }
             />
@@ -396,7 +398,6 @@ const App = () => {
               </GuardedRoute>
             }
           />
-
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/verification-code" element={<VerificationCode />} />

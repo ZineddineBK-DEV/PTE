@@ -14,23 +14,6 @@ const getUserPlans = async (data, token) => {
   return response.data;
 };
 
-// const uploadPlan = async (id ,data, token) => {
-//   console.log(id);
-//   console.log(token);
-//   console.log(data);
-
-//   const config = {
-//     headers: {
-//       Authorization: `Bearer ${token}`,
-//     },
-//     params: { ...data },
-
-//   };
-//   const response = await axios.post(API_URL + "upload/"+id, data, config);
-
-//   return response.data;
-// };
-
 const uploadPlan = async (data, token) => {
   const config = {
     headers: {

@@ -1,7 +1,5 @@
-import { useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import { MdOutlineMeetingRoom } from "react-icons/md";
-import { AiOutlineUsergroupAdd } from "react-icons/ai";
+import { MdOutlineAssessment, MdOutlineMeetingRoom } from "react-icons/md";
 import { BiCar } from "react-icons/bi";
 import { RiTeamLine } from "react-icons/ri";
 import { FaTasks } from "react-icons/fa";
@@ -127,9 +125,6 @@ const Sidebar = () => {
                       <span className="ml-2 text-sm tracking-wide truncate">
                         Register requests
                       </span>
-                      {/* <span className="px-2 py-0.5 ml-auto text-xs font-medium tracking-wide text-green-500 bg-green-50 rounded-full">
-                       {requests.length} 
-                    </span> */}
                     </NavLink>
                   </li>
                 ) : null}
@@ -197,11 +192,6 @@ const Sidebar = () => {
                       </NavLink>
                   </li>
                    ) : null}
-
-                  
-                
-            
-              
                 <li className="px-5">
                   <div className="flex flex-row items-center h-8">
                     <div className="text-sm font-light tracking-wide text-gray-500">
@@ -253,108 +243,26 @@ const Sidebar = () => {
                       Technical Team
                     </span>
                   </NavLink>
+                  <li>
+                  <NavLink
+                    to="/projects"
+                    className={({ isActive }) =>
+                      isActive ? activeLink : normalLink
+                    }
+                  >
+                    <span className="inline-flex justify-center items-center ml-4">
+                      <MdOutlineAssessment className="text-2xl text-gray-500" />
+                    </span>
+                    <span className="ml-2 text-sm tracking-wide truncate">
+                    Project Managment
+                    </span>
+                  </NavLink>
+                </li>
                 </li>
               </ul>
             </div>
           </div>
-          {/* <div className="flex justify-between items-center">
-            <Link
-              to="/"
-              onClick={handleCloseSideBar}
-              className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900"
-            >
-              <img
-                src={logo}
-                alt="logo"
-                className="object-scale-down h-20 w-60"
-              />
-            </Link>
-            <TooltipComponent content="Menu" position="BottomCenter">
-              <NavLink
-                type="NavLink"
-                onClick={() => dispatch(setActiveMenu(!activeMenu))}
-                style={{ color: currentColor }}
-                className="text-xl rounded-full p-3 hover:bg-light-gray mt-4 block md:hidden"
-              >
-                <MdOutlineCancel />
-              </NavLink>
-            </TooltipComponent>
-          </div>
-          <div className="mt-10 ">
-            {links.map((item) => (
-              <div key={item.title}>
-                <p className="text-gray-400 dark:text-gray-400 m-3 mt-4 uppercase">
-                  {item.title}
-                </p>
-                {item.links.map((link) =>
-                  Compare(link.auth, user.roles) ? (
-                    <div key={link.name}>
-                      {link.path ? (
-                        <li className="nav-item list-none">
-                          <NavLink
-                            to={`/${link.path}`}
-                            onClick={handleCloseSideBar}
-                            // style={({ isActive }) => ({
-                            //   backgroundColor: isActive ? currentColor : "",
-                            // })}
-                            className={({ isActive }) =>
-                              isActive ? activeLink : normalLink
-                            }
-                          >
-                            {link.icon}
-                            <span className="capitalize ">{link.name}</span>
-                          </NavLink>
-                        </li>
-                      ) : (
-                        <li className="nav-item dropdown list-none p-1">
-                          <NavLink
-                            className="flex items-center p-2 w-full text-base font-normal text-[#041e62] rounded-lg transition duration-75 group
-                            dropdown-sidebar
-                            hover:bg-gray-100 dark:text-white dark:hover:bg-blue-700"
-                            aria-controls="dropdown-example"
-                            data-collapse-toggle="dropdown-example"
-                            onClick={() => handleOpenSubNav(link.name)}
-                          >
-                            <span className="flex ml-3 text-left whitespace-nowrap">
-                              <div>{link.name}</div>
-                              {link.sub ? (
-                                <div className="mt-1 pl-2">
-                                  <AiFillCaretDown />
-                                </div>
-                              ) : null}
-                            </span>
-                          </NavLink>
-                          {openSubNav && link.sub && link.name === parent
-                            ? link.sub.map((s, index) => (
-                                <div
-                                  key={`${s.name}${s.index}`}
-                                  className="dropdown-menu dropdown-menu-right"
-                                  aria-labelledby="navbarDropdown"
-                                >
-                                  <NavLink
-                                    to={`/${s.path}`}
-                                    onClick={handleCloseSideBar}
-                                    className={({ isActive }) =>
-                                      isActive ? activeLink : normalLink
-                                    }
-                                  >
-                                    {s.icon}
-                                    <span className="capitalize ">
-                                      {s.name}
-                                    </span>
-                                  </NavLink>
-                                </div>
-                              ))
-                            : null}
-                        </li>
-                      )}
-                    </div>
-                  ) : null
-                )}
-              </div>
-            ))}
-          </div> */}
-        </>
+          </>
       )}
     </div>
   ) : (
