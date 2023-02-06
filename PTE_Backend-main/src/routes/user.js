@@ -37,7 +37,7 @@ router.post("/validateCode", userCtr.validateCode);
 router.post("/changePswdAutorisation/:id", userCtr.changePswdAutorisation);
 router.patch("/change-psw/:id", userCtr.changePswd);
 
-router.get("/getall", authMiddleware, userCtr.getAllUsers);
+router.get("/getall", userCtr.getAllUsers);
 router.get("/sousTraitant", authMiddleware, userCtr.getAllUsers);
 
 
