@@ -32,7 +32,7 @@ router.patch(
 );
 router.post("/forgotPassword", userCtr.forgotPassword);
 router.post("/checkpass", authMiddleware, userCtr.checkPassword);
-router.post("/addUser",authMiddleware,userCtr.AddUser)
+router.post("/addUser",userCtr.AddUser)
 router.post("/validateCode", userCtr.validateCode);
 router.post("/changePswdAutorisation/:id", userCtr.changePswdAutorisation);
 router.patch("/change-psw/:id", userCtr.changePswd);
