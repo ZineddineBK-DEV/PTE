@@ -24,6 +24,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
 
+
 app.use((req,res,next) => {
   res.header("Access-Control-Allow-Origin", "*");
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
@@ -52,6 +53,9 @@ mongoose
     console.log("Connected to database");
   })
   .catch((err) => console.log("error has been occured: ", err));
+
+
+  
 
 // ========= configurring routes ==========
 app.use("/images", express.static(path.join("./src/static/images")));
