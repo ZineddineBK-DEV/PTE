@@ -167,13 +167,8 @@
       }
     }
   },
-<<<<<<< HEAD
-  "defaultProject": "material-dashboard-angular",
-  
-=======
   "defaultProject": "PTE",
  
->>>>>>> 73cbbd74fb9bfcb74523e52ce927c456eae9e935
   "cli": {
     "analytics": false
   }
