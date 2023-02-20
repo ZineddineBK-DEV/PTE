@@ -1,8 +1,9 @@
+import { LoginComponent } from './components/login/login.component';
 import { NgModule } from '@angular/core';
 import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
-
+import { SignupComponent } from './components/signup/signup.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
 const routes: Routes =[
@@ -10,7 +11,15 @@ const routes: Routes =[
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full',
-  }, {
+  },
+  {
+    path: 'signup',
+    component: SignupComponent 
+  },
+  {path: 'login',
+  component : LoginComponent
+  },
+  {
     path: '',
     component: AdminLayoutComponent,
     children: [{

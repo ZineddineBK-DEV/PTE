@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Babylonica&family=Mukta:wght@200&display=swap');
+div {font-family: 'Mukta', sans-serif;}
+h1 {font-family: 'Mukta', sans-serif;}
+
+.mat-black{
+    background-color: rgb(19, 18, 18);
+    color: #fff;
+}
+

@@ -1,10 +1,10 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
-  "newProjectRoot": "PTE",
+  "newProjectRoot": "PTE_Frontend-new",
   "projects": {
-    "material-dashboard-angular": {
-      "root": "",
+    "PTE_Frontend-new": {
+      "root": "PTE_Frontend-new",
       "sourceRoot": "src",
       "projectType": "application",
       "architect": {
@@ -23,7 +23,8 @@
             "styles": [
               "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
               "src/assets/scss/material-dashboard.scss",
-              "src/assets/css/demo.css"
+              "src/assets/css/demo.css",
+              "src/styles.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js",
@@ -85,14 +86,15 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "material-dashboard-angular:build"
+            "browserTarget": "PTE_Frontend-new:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {
-              "browserTarget": "material-dashboard-angular:build:production"
+              "browserTarget": "PTE_Frontend-new:build:production"
             },
             "development": {
-              "browserTarget": "material-dashboard-angular:build:development"
+              "browserTarget": "PTE_Frontend-new:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -123,7 +125,8 @@
             "styles": [
               "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
               "src/assets/scss/material-dashboard.scss",
-              "src/assets/css/demo.css"
+              "src/assets/css/demo.css",
+              "src/styles.css"
             ],
             "assets": [
               "src/assets",
@@ -143,7 +146,7 @@
         }
       }
     },
-    "material-dashboard-angular-e2e": {
+    "PTE_Frontend-new-e2e": {
       "root": "",
       "sourceRoot": "",
       "projectType": "application",
@@ -167,13 +170,8 @@
       }
     }
   },
-<<<<<<< HEAD
-  "defaultProject": "material-dashboard-angular",
-  
-=======
-  "defaultProject": "PTE",
+  "defaultProject": "PTE_Frontend-new",
  
->>>>>>> 73cbbd74fb9bfcb74523e52ce927c456eae9e935
   "cli": {
     "analytics": false
   }
