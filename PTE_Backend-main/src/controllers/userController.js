@@ -1,5 +1,6 @@
 const { ObjectId } = require("mongodb");
 const User = require("../models/user");
+
 const Roles = require("../models/roles");
 const bcrypt = require("bcryptjs");
 const crypto = require("crypto");
@@ -35,7 +36,7 @@ function setUserTitle(experience) {
 module.exports.AddUser = async function (req, res, next) {
   const body = { ...req.body };
 
-  body.image = req.file.filename;
+  body.image = req.file.image;
 
   try {
    
@@ -65,9 +66,9 @@ module.exports.AddUser = async function (req, res, next) {
 
 module.exports.signUp = async function (req, res, next) {
   const body = { ...req.body };
-
+if (req.file){
   body.image = req.file.filename;
-
+}
   try {
     hashedPassword = await bcrypt.hash(body.password, 10);
     body.password = hashedPassword;
@@ -135,6 +136,7 @@ module.exports.login = async function (req, res, next) {
       {
         email: fetchedUser.email,
         id: fetchedUser._id,
+        roles : fetchedUser.roles
       },
       "secret_this_should_be_longer",
       { expiresIn: "1h" }
@@ -266,19 +268,19 @@ module.exports.forgotPassword = async function (req, res, next) {
 };
 
 module.exports.validateCode = async function (req, res) {
-  try {
-    let forgetPassword = await ForgetPassword.findOne({
-      email: req.body.email,
-    });
+   try {
+     let forgetPassword = await ForgetPassword.findOne({
+       email: req.body.email,
+     });
 
-    if (forgetPassword.code === req.body.code) {
-      return res.status(200).json({ id: forgetPassword._id });
-    } else {
+     if (forgetPassword.code === req.body.code) {
+       return res.status(200).json({ id: forgetPassword._id });
+     } else {
       return res.status(500).json({ message: "Unauthorized" });
     }
-  } catch (error) {
-    return res.status(500).json(error);
-  }
+   } catch (error) {
+     return res.status(500).json(error);
+   }
 };
 
 module.exports.changePswdAutorisation = async function (req, res) {
@@ -325,22 +327,22 @@ module.exports.confirmSignUp = async function (req, res) {
   }
 
   const user =await  User.findByIdAndUpdate(ID, { isEnabled: true });
-  if (user) {
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      port: 587,
-      auth: {
-        user: "prologic.simop@gmail.com",
-        pass: "mepdngigwccwxwog",
-      },
-    });
-    transporter.sendMail({
-      from: "prologic.simop@gmail.com",
-      to: user.email,
-      subject: "Prologic -- register request accepted",
-      text: "Your register request is accepted",
-    });
-  }
+  // if (user) {
+  //   const transporter = nodemailer.createTransport({
+  //     service: "gmail",
+  //     port: 587,
+  //     auth: {
+  //       user: "prologic.simop@gmail.com",
+  //       pass: "mepdngigwccwxwog",
+  //     },
+  //   });
+  //   transporter.sendMail({
+  //     from: "prologic.simop@gmail.com",
+  //     to: user.email,
+  //     subject: "Prologic -- register request accepted",
+  //     text: "Your register request is accepted",
+  //   });
+  // }
 
   return res.status(200).json({ message: "User accepted" });
 };
@@ -552,3 +554,4 @@ module.exports.searchUsers = async function (req, res) {
     res.status(500).json(error);
   }
 };
+
