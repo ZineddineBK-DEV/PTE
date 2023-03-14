@@ -3,58 +3,163 @@
  
   <div class="center">
         <h1>Sign Up</h1>
-        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-          <!-- <mat-form-field>
-            <mat-label>Insert image</mat-label>
-            <mat-icon matSuffix >file</mat-icon>
-            <input matInput formControlName="image" type="file" required> 
-          </mat-form-field> -->
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit(image)" enctype="multipart/form-data">
+          
       <mat-grid-list cols="2" rowHeight="14:3" gutterSize="7px"  >
-          <mat-grid-tile>
+        <mat-grid-tile colspan="2">
+          <mat-form-field>
+            
+            
+            <input matInput   type="file"  formControlName="image" (change)="onFileSelected($event)" #image> 
+          </mat-form-field>
+          </mat-grid-tile> 
+        <mat-grid-tile>
           <mat-form-field>
             <mat-label>Full Name</mat-label>
             <mat-icon matSuffix >account_circle</mat-icon>
-            <input matInput formControlName="fullName" type="text" required> 
+            <input matInput formControlName="fullName" type="text" required #fullName> 
           </mat-form-field>
           </mat-grid-tile>
           <mat-grid-tile>
           <mat-form-field>
                 <mat-label>Email</mat-label>
                 <mat-icon matSuffix >mail_outline</mat-icon>
-                <input matInput formControlName="email" type="email" required> 
+                <input matInput formControlName="email" type="email" required #email> 
               </mat-form-field>
             </mat-grid-tile>
+            
             <mat-grid-tile>
           <mat-form-field>
             <mat-label>Password</mat-label>
             <mat-icon matSuffix >lock_open</mat-icon>
-            <input matInput type="password" formControlName="password" required> 
+            <input matInput type="password" formControlName="password" required #password> 
           </mat-form-field>
           </mat-grid-tile>
-          
-        <mat-grid-tile>
-          <mat-form-field>
+            
+          <mat-grid-tile>
+           <mat-form-field>
             <mat-label>Confirm Password</mat-label>
             <mat-icon matSuffix >lock_open</mat-icon>
-            <input matInput type="password" formControlName="confirmPassword" required> 
-          </mat-form-field>
+            <input matInput type="password" formControlName="confirmPassword" required #confirmPassword> 
+           </mat-form-field>
           </mat-grid-tile>
           <mat-grid-tile>
-          <mat-form-field>
+           <mat-form-field>
             <mat-label>Phone Number</mat-label>
             <mat-icon matSuffix >call</mat-icon>
-            <input matInput type="tel" formControlName="phone" required> 
-          </mat-form-field>
+            <input matInput type="tel" formControlName="phone" required #phone> 
+           </mat-form-field>
         </mat-grid-tile>
         <mat-grid-tile>
           <mat-form-field> 
-            <mat-label>Choose a date</mat-label>
-            <input matInput [matDatepicker]="picker" formControlName="birthdate" required>
+            <mat-label>Birthday</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="DateOfBirth" required #DateOfBirth>
             <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
         </mat-grid-tile>
-        <mat-grid-tile colspan="2">
+
+        <mat-grid-tile>
+          <mat-form-field>
+            <mat-label>Gender</mat-label>
+            <mat-icon matSuffix >man</mat-icon>
+            <mat-icon matSuffix >woman</mat-icon>
+            <input matInput formControlName="Gender" type="text"  #Gender> 
+          </mat-form-field>
+          </mat-grid-tile>
+          <mat-grid-tile>
+          <mat-form-field>
+                <mat-label>nationality</mat-label>
+                <mat-icon matSuffix >public</mat-icon>
+                <input matInput formControlName="nationality" type="text"  #nationality> 
+              </mat-form-field>
+            </mat-grid-tile>
+            
+
+            <mat-grid-tile>
+              <mat-form-field>
+                <mat-label>family situation</mat-label>
+                <mat-icon matSuffix >family_restroom</mat-icon>
+                <input matInput formControlName="familySituation" type="text"  #familySituation> 
+              </mat-form-field>
+              </mat-grid-tile>
+              
+              <mat-grid-tile>
+              <mat-form-field>
+                    <mat-label>Address</mat-label>
+                    <mat-icon matSuffix >home</mat-icon>
+                    <input matInput formControlName="address" type="text"  #address> 
+                  </mat-form-field>
+                </mat-grid-tile>
+
+
+
+                <mat-grid-tile>
+                  <mat-form-field formControlName="roles" #roles>
+                    <mat-label>Select your role</mat-label>
+                    <mat-icon matSuffix >engineering</mat-icon>
+                    <mat-select>
+                      <mat-option value="Admin">Admin</mat-option>
+                      <mat-option value="Engineer">Engineer</mat-option>
+                      <mat-option value="sales_assistant">sales_assistant</mat-option>
+                      <mat-option value="virt_manager">virt_manager</mat-option>
+                    </mat-select>
+                   
+                  </mat-form-field>
+               </mat-grid-tile>
+               
+               <mat-grid-tile>
+                <mat-form-field>
+                      <mat-label>Experience</mat-label>
+                      <mat-icon matSuffix >badge</mat-icon>
+                      <input matInput formControlName="experience" type="number"  #experience> 
+                    </mat-form-field>
+                  </mat-grid-tile>
+
+
+                  <mat-grid-tile>
+                    <mat-form-field>
+                     <mat-label>department</mat-label>
+                     <mat-icon matSuffix >apartment</mat-icon>
+                     <input matInput type="text" formControlName="department"  #department> 
+                    </mat-form-field>
+                 </mat-grid-tile>
+                 
+                 <mat-grid-tile>
+                   <mat-form-field> 
+                     <mat-label>hiringDate</mat-label>
+                     <input matInput [matDatepicker]="picker" formControlName="hiringDate"  #hiringDate>
+                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                     <mat-datepicker #picker></mat-datepicker>
+                   </mat-form-field>
+                 </mat-grid-tile>
+
+
+                 
+                  
+                  <mat-grid-tile>
+                  <mat-form-field>
+                        <mat-label>title</mat-label>
+                        <mat-icon matSuffix >title</mat-icon>
+                        <input matInput formControlName="title" type="text"  #title> 
+                      </mat-form-field>
+                    </mat-grid-tile>
+
+
+                    <mat-grid-tile>
+                      
+                          
+                          
+                        
+                          <mat-checkbox formControlName="drivingLicense"   >I can drive</mat-checkbox>
+                          
+                          <mat-icon matSuffix >directions_car</mat-icon>
+                        
+                    </mat-grid-tile>
+        
+        
+        
+      <mat-grid-tile colspan="2">
           <input type="submit">
         </mat-grid-tile>
         <mat-grid-tile colspan="2"> 

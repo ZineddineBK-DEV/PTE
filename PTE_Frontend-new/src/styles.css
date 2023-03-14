@@ -7,3 +7,12 @@ h1 {font-family: 'Mukta', sans-serif;}
     color: #fff;
 }
 
+.mat-red{
+    background-color: rgb(187, 63, 63);
+    color: #fff;
+}
+
+.mat-green{
+    background-color: rgb(49, 177, 79);
+    color: #fff;
+}

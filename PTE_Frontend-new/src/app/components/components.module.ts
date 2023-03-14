@@ -4,13 +4,16 @@ import { MaterialModule } from './../Material/material.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { AdminLayoutModule } from 'app/layouts/admin-layout/admin-layout.module';
+import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './footer/footer.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { LoginComponent } from './login/login.component';
-
+import { UserProfileComponent } from 'app/user-profile/user-profile.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { SignUpRequestsComponent } from './sign-up-requests/sign-up-requests.component';
+import { VehiclesComponent } from './vehicles/vehicles.component';
+import { AddcarComponent } from './vehicles/addcar/addcar.component';
 
 
 @NgModule({
@@ -18,8 +21,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     CommonModule,
     RouterModule,
     MaterialModule,
-    AdminLayoutModule,
+    FormsModule,
     ReactiveFormsModule,
+    
     
     
     
@@ -31,6 +35,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     SidebarComponent,
     LoginComponent,
     SignupComponent,
+    UserProfileComponent,
+    SignUpRequestsComponent,
+    VehiclesComponent,
+    AddcarComponent
     
     
     
@@ -39,7 +47,10 @@ import { ReactiveFormsModule } from '@angular/forms';
     FooterComponent,
     NavbarComponent,
     SidebarComponent,
-    SignupComponent
+    SignupComponent,
+    UserProfileComponent,
+    SignUpRequestsComponent,
+    VehiclesComponent
   ]
 })
 export class ComponentsModule { }
