@@ -1,0 +1,51 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Request list</h4>
+                        
+                    </div>
+                    
+                    <div class="card-body">
+                        <mat-form-field>
+                            <mat-label></mat-label>
+                            <a (click)="search()">Search</a>
+                            <input matInput [(ngModel)]="searchText" type="text" placeholder="Enter search text">
+                          </mat-form-field>
+                            
+                        
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    
+                                  <th>Registration number</th>
+                                    
+                                  <th>Model</th>
+                                        
+                                  <th>Type</th>
+
+                                  <th>Manage</th>
+                                      
+                              </thead>
+                                <tbody>
+                                 
+                                    <tr *ngFor="let vehicle of vehicles" >
+                                        
+                                      <td>{{ vehicle.registration_number }} </td> 
+                                      <td>{{ vehicle.model }} </td>
+                                      <td> {{ vehicle.type }}</td>
+                                      <td>  <a (click)="deleteVehicle(vehicle._id)"> <mat-icon matSuffix >delete</mat-icon></a> </td>
+                                      
+                                      
+                                    
+                                  
+                          
+                                </tbody>
+                            </table>
+                            <a mat-raised-button color="orange" (click)="openMiniForm()">Add vehicle</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
