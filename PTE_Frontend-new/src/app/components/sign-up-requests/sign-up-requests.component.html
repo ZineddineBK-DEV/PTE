@@ -1,0 +1,61 @@
+<!-- 
+<div class="center">
+  <h2>Sinup Requests</h2>
+    <ul>
+      <li *ngFor="let user of users">
+        {{ user.fullName }} - {{ user.email }} 
+        <a mat-raised-button color="green" (click)="confirmSignUp(user._id)">Confirm</a>
+        <a mat-raised-button color="red" (click)="deleteUser(user._id)">Delete</a>
+        <p *ngIf="deleteError">{{ deleteError }}</p>
+        <p *ngIf="deleteSuccess">{{ deleteSuccess }}</p>
+      </li>
+    </ul>
+</div> -->
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title ">Request list</h4>
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table">
+                              <thead class=" text-primary">
+                                  <th>Image</th>
+                                <th>
+                                      Full name
+                                  </th>
+                                  <th>
+                                      Email
+                                  </th>
+                                   <th>
+                                    Role
+                                   </th>
+                                   <th>
+                                    User id
+                                   </th>
+
+                                  <th>Manage request</th>
+                                  
+            
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let user of users" >
+                                    <img  [src]="'http://localhost:3001/images/'+ user.image">
+                                    <td>{{ user.fullName }} </td> 
+                                  <td>{{ user.email }} </td>
+                                  <td> {{ user.roles}}</td>
+                                  <td> {{ user._id}}</td>
+                                  <td><a mat-raised-button color="green" (click)="confirmSignUp(user._id)">Confirm</a>
+                                  <a mat-raised-button color="red" (click)="deleteUser(user._id)">Delete</a></td>
+                                
+                                
+                        
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>

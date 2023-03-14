@@ -1,0 +1,32 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    width: 300px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  input {
+    font-size: 18px;
+    padding: 10px;
+    border: none;
+    
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .button-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  button {
+    margin: 0 10px;
+  }
