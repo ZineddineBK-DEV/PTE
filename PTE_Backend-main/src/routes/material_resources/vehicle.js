@@ -5,22 +5,20 @@ const { authMiddleware } = require("../../middlewares/authMiddleware");
 const {
   checkAdminMiddleware,
 } = require("../../middlewares/checkAdminMiddleware");
-router.get("/getVehicles", authMiddleware, vehicleCtr.getAllVehicles);
+router.get("/getVehicles",  vehicleCtr.getAllVehicles);
 router.post(
   "/addVehicle",
-  authMiddleware,
-  checkAdminMiddleware,
+ 
   vehicleCtr.addVehicle
 );
 
 router.delete(
   "/deleteVehicle/:id",
-  authMiddleware,
-  checkAdminMiddleware,
+  
   vehicleCtr.deleteVehicle
 );
 
-router.get("/search", authMiddleware, vehicleCtr.searchVehicle);
+router.get("/search",  vehicleCtr.searchVehicle);
 /**Events Managment ********/
 router.get("/events", authMiddleware, vehicleCtr.getVehicleEvents);
 router.post("/setevent", authMiddleware, vehicleCtr.createEvent);

@@ -13,11 +13,10 @@ router.post("/signup", upload.single("image"), userCtr.signUp);
 router.post("/adduser",userCtr.AddUser);
 router.get(
   "/signup/requests",
-  authMiddleware,
-  checkAdminMiddleware,
+  
   userCtr.getSignUpRequests
 );
-router.post("/confirm-signup/:id", authMiddleware, userCtr.confirmSignUp);
+router.post("/confirm-signup/:id",  userCtr.confirmSignUp);
 router.patch(
   "/update/:id",
   upload.single("image"),
@@ -45,7 +44,7 @@ router.post("/filter", authMiddleware, userCtr.filterUsers);
 router.post("/search", authMiddleware, userCtr.searchUsers);
 
 
-router.delete("/delete/:id", authMiddleware, userCtr.deleteUser);
+router.delete("/delete/:id",  userCtr.deleteUser);
 /******************************************* */
 /************ Event Managment ************** */
 /******************************************* */

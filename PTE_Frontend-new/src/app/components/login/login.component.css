@@ -6,7 +6,7 @@
   height:100%;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(120deg, #26c4d9, #2980b9);/*violet : #8e44ad*/
+  background: transparent;
 }
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 .google-btn {

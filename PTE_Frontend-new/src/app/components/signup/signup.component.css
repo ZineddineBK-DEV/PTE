@@ -6,7 +6,7 @@
   height:100%;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
-  background: linear-gradient(120deg, #26c4d9, #2980b9);/*violet : #8e44ad*/
+  background: transparent;
 }
 mat-form-field{
     width: 100%;
@@ -19,7 +19,7 @@ mat-form-field{
   left: 50%;
   transform: translate(-50%, -50%);
   width: 670px;
-  height: 445px;
+  height: 850px;
   background: white;
   border-radius: 10px;
   box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
@@ -86,4 +86,9 @@ input[type="submit"]:hover{
 }
 .signup_link a:hover{
   text-decoration: underline;
+}
+.mat-checkbox{
+  margin-top: 10px;
+  padding: 2px;
+  
 }
