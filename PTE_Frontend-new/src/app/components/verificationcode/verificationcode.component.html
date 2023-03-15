@@ -3,14 +3,15 @@
     <div class="center">
         
         <form    >
+          <h1>Validation code sent successfully !</h1>
             <mat-form-field>
-                <mat-label>Enter validation code</mat-label>
+                <mat-label>Enter validation code to change password</mat-label>
                 <mat-icon matSuffix >lock_open</mat-icon>
-                <input matInput type="text" formControlName="email" required #email> 
+                <input matInput type="text" formControlName="code" #code> 
               </mat-form-field>
             
           
-          <button type="submit" >Verify</button>
+          <button type="submit" (click)="validateCode(code)">Verify</button>
               
           
           

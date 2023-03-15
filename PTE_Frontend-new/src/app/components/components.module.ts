@@ -16,6 +16,7 @@ import { VehiclesComponent } from './vehicles/vehicles.component';
 import { AddcarComponent } from './vehicles/addcar/addcar.component';
 import { VehicleseventsComponent } from './vehiclesevents/vehiclesevents.component';
 import { VerificationcodeComponent } from './verificationcode/verificationcode.component';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
 
 
 
@@ -44,6 +45,7 @@ import { VerificationcodeComponent } from './verificationcode/verificationcode.c
     AddcarComponent,
     VehicleseventsComponent,
     VerificationcodeComponent,
+    ChangepasswordComponent,
     
     
     

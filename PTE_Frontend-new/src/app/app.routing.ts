@@ -8,6 +8,7 @@ import { SignupComponent } from './components/signup/signup.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AuthGuard } from './auth.guard';
 import { VerificationcodeComponent } from './components/verificationcode/verificationcode.component';
+import { ChangepasswordComponent } from './components/changepassword/changepassword.component';
 
 
 
@@ -16,6 +17,7 @@ const routes:  Routes = [
   { path: 'login',     component: LoginComponent },
   { path: 'dashboard', canActivate:[AuthGuard],    component: DashboardComponent },
   { path : 'verificationcode' , component:VerificationcodeComponent },
+  { path : 'changepassword' , component:ChangepasswordComponent},
   
   
   {

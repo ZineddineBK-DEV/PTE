@@ -41,7 +41,7 @@ deleteVehicle(vehicleid:String){
     this.snackBar.open('Car deleted successfully', 'Dismiss', {
       duration: 3000,
       horizontalPosition: 'center',
-      verticalPosition: 'bottom'
+      verticalPosition: 'top'
     });
   });
  
