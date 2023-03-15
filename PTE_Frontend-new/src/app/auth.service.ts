@@ -145,6 +145,11 @@ export class AuthService {
 
   }
 
+  forgotPassword(email:string){
+    return this.http.post("http://localhost:3001/api/users/forgotPassword", { email });
+
+  }
+
 }
 
 

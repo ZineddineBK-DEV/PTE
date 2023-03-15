@@ -12,7 +12,8 @@ export const ROUTES: RouteInfo[] = [
     { path: '/user-profile', title: 'User Profile',  icon:'person', class: '' },
     { path: '/user-management', title: 'User Management',  icon:'manage_accounts', class: '' },
     { path: '/requests' , title:'requests' , icon:'person_add' , class:''},
-    { path : '/vehicles' , title:'vehicles' , icon:'directions_car' , class:''}
+    { path : '/vehicles' , title:'vehicles' , icon:'directions_car' , class:''},
+    { path : '/vehiclesevents' , title:'vehicle reservation', icon:'event' , class:''}
     
 
     

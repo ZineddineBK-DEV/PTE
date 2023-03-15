@@ -4,7 +4,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header card-header-danger">
-                        <h4 class="card-title ">Request list</h4>
+                        <h4 class="card-title ">Vehicles</h4>
                         
                     </div>
                     
@@ -20,9 +20,11 @@
                             <table class="table">
                                 <thead class=" text-primary">
                                     
-                                  <th>Registration number</th>
+                                  
                                     
                                   <th>Model</th>
+                                  
+                                  <th>Registration number</th>
                                         
                                   <th>Type</th>
 
@@ -32,9 +34,8 @@
                                 <tbody>
                                  
                                     <tr *ngFor="let vehicle of vehicles" >
-                                        
-                                      <td>{{ vehicle.registration_number }} </td> 
-                                      <td>{{ vehicle.model }} </td>
+                                     <td>{{ vehicle.model }} </td>
+                                     <td>{{ vehicle.registration_number }} </td> 
                                       <td> {{ vehicle.type }}</td>
                                       <td>  <a (click)="deleteVehicle(vehicle._id)"> <mat-icon matSuffix >delete</mat-icon></a> </td>
                                       

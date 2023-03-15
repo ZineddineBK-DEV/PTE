@@ -9,6 +9,8 @@ import { SignUpRequestsComponent } from 'app/components/sign-up-requests/sign-up
 import { AuthGuard } from 'app/auth.guard';
 import { RoleGuard } from 'app/role.guard';
 import { VehiclesComponent } from 'app/components/vehicles/vehicles.component';
+import { VehicleseventsComponent } from 'app/components/vehiclesevents/vehiclesevents.component';
+
 
 
 
@@ -23,6 +25,8 @@ export const dashboardRoutes: Routes = [
     data :{
         role: 'admin',
     }},
-    { path: 'vehicles',   component: VehiclesComponent }
+    { path: 'vehicles',   component: VehiclesComponent },
+    {path : 'vehiclesevents', component:VehicleseventsComponent},
+    
 ]
   
