@@ -16,7 +16,7 @@ export class SignUpRequestsComponent implements OnInit{
 users : User[];
 deleteError: string;
   deleteSuccess: string;
-  private _DeleteUrl = "http://localhost:3001/api/users/delete/:";
+  private _DeleteUrl = "http://localhost:3001/api/users/delete/";
   private _ConfirmUrl= "http://localhost:3001/api/users/confirm-signup/";
   user: User;
   file;

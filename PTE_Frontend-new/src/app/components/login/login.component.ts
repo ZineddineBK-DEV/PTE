@@ -36,7 +36,7 @@ export class LoginComponent implements OnInit {
     const email = this.loginForm.get('email').value;
     this.authService.forgotPassword(email).subscribe(
       (data) => {
-        this.http.post("http://localhost:3001/api/users/forgotPassword", {email });
+        this.http.post("http://localhost:3001/api/users/forgotPassword", {email});
         console.log('Password reset code sent successfully');
         
       },
@@ -44,6 +44,7 @@ export class LoginComponent implements OnInit {
         console.log(error);
         
       });    
-      this.router.navigate(['/verificationcode']);
+      this.router.navigate(['/verificationcode'], { queryParams: { email } });
     }}
+    
 

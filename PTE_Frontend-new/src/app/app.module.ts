@@ -1,7 +1,6 @@
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { JwtInterceptor } from './interceptor';
 import { MatDialogModule } from '@angular/material/dialog';
-import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
@@ -10,11 +9,13 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
-
+ 
 import { ComponentsModule } from "./components/components.module";
 import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
 import {GoogleLoginProvider,} from 'angularx-social-login';
 import { AuthService } from './auth.service';
+
+
 
 
 
@@ -26,7 +27,7 @@ import { AuthService } from './auth.service';
         AppComponent,
         
         DashboardComponent,
-        
+                  
     ],
     providers: [AuthService, 
         {
@@ -64,6 +65,13 @@ import { AuthService } from './auth.service';
         ComponentsModule,
         SocialLoginModule,
         MatDialogModule,
+        
+        
+        
+
+        
+        
+        
         
         
        

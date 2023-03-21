@@ -33,7 +33,7 @@ export class SignupComponent implements OnInit {
     confirmPassword: [''],
     phone: [''],
     DateOfBirth: [''] ,
-    Gender : [''],
+    gender : [''],
     nationality:[''],
     familySituation:[''],
     address:[''],

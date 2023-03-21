@@ -1,16 +1,3 @@
-<!-- 
-<div class="center">
-  <h2>Sinup Requests</h2>
-    <ul>
-      <li *ngFor="let user of users">
-        {{ user.fullName }} - {{ user.email }} 
-        <a mat-raised-button color="green" (click)="confirmSignUp(user._id)">Confirm</a>
-        <a mat-raised-button color="red" (click)="deleteUser(user._id)">Delete</a>
-        <p *ngIf="deleteError">{{ deleteError }}</p>
-        <p *ngIf="deleteSuccess">{{ deleteSuccess }}</p>
-      </li>
-    </ul>
-</div> -->
 <div class="main-content">
   <div class="container-fluid">
       <div class="row">
@@ -48,8 +35,8 @@
                                   <td>{{ user.email }} </td>
                                   <td> {{ user.roles}}</td>
                                   <td> {{ user._id}}</td>
-                                  <td><a mat-raised-button color="green" (click)="confirmSignUp(user._id)">Confirm</a>
-                                  <a mat-raised-button color="red" (click)="deleteUser(user._id)">Delete</a></td>
+                                  <td><a   (click)="confirmSignUp(user._id)"><mat-icon matSuffix color="green">check_cirlce</mat-icon></a>
+                                  <a   (click)="deleteUser(user._id)"><mat-icon matSuffix color="red">delete</mat-icon></a></td>
                                 
                                 
                         

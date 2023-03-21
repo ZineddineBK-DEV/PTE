@@ -2,7 +2,7 @@
 <div class="mycontainer">
     <div class="center">
         
-        <form    >
+        <form  [formGroup]="FormCode"  >
           <h1>Validation code sent successfully !</h1>
             <mat-form-field>
                 <mat-label>Enter validation code to change password</mat-label>
@@ -11,7 +11,7 @@
               </mat-form-field>
             
           
-          <button type="submit" (click)="validateCode(code)">Verify</button>
+          <button type="submit" (click)="validateCode()">Verify</button>
               
           
           

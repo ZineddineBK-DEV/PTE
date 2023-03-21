@@ -14,9 +14,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { SignUpRequestsComponent } from './sign-up-requests/sign-up-requests.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
 import { AddcarComponent } from './vehicles/addcar/addcar.component';
-import { VehicleseventsComponent } from './vehiclesevents/vehiclesevents.component';
+
 import { VerificationcodeComponent } from './verificationcode/verificationcode.component';
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import { VehicleseventsComponent } from './vehicles/vehiclesevents/vehiclesevents.component';
+import { CalendarComponent } from './calendar/calendar.component';
+import { FullCalendarModule } from '@fullcalendar/angular';
+
+
 
 
 
@@ -27,6 +32,10 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+    FullCalendarModule
+    
+    
+    
     
     
     
@@ -43,9 +52,14 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
     SignUpRequestsComponent,
     VehiclesComponent,
     AddcarComponent,
-    VehicleseventsComponent,
+    
     VerificationcodeComponent,
     ChangepasswordComponent,
+    VehicleseventsComponent,
+    CalendarComponent,
+    
+    
+    
     
     
     
@@ -58,7 +72,9 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
     SignupComponent,
     UserProfileComponent,
     SignUpRequestsComponent,
-    VehiclesComponent
+    VehiclesComponent,
+    
+    
   ]
 })
 export class ComponentsModule { }

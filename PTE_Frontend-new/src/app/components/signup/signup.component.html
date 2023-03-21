@@ -60,13 +60,15 @@
         </mat-grid-tile>
 
         <mat-grid-tile>
-          <mat-form-field>
-            <mat-label>Gender</mat-label>
-            <mat-icon matSuffix >man</mat-icon>
-            <mat-icon matSuffix >woman</mat-icon>
-            <input matInput formControlName="Gender" type="text"  #Gender> 
+          <mat-form-field> 
+            <mat-label>hiringDate</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="hiringDate"  #hiringDate>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
-          </mat-grid-tile>
+        </mat-grid-tile>
+
+        
           <mat-grid-tile>
           <mat-form-field>
                 <mat-label>nationality</mat-label>
@@ -99,7 +101,7 @@
                     <mat-label>Select your role</mat-label>
                     <mat-icon matSuffix >engineering</mat-icon>
                     <mat-select>
-                      <mat-option value="Admin">Admin</mat-option>
+                      
                       <mat-option value="Engineer">Engineer</mat-option>
                       <mat-option value="sales_assistant">sales_assistant</mat-option>
                       <mat-option value="virt_manager">virt_manager</mat-option>
@@ -125,15 +127,8 @@
                     </mat-form-field>
                  </mat-grid-tile>
                  
-                 <mat-grid-tile>
-                   <mat-form-field> 
-                     <mat-label>hiringDate</mat-label>
-                     <input matInput [matDatepicker]="picker" formControlName="hiringDate"  #hiringDate>
-                     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                     <mat-datepicker #picker></mat-datepicker>
-                   </mat-form-field>
-                 </mat-grid-tile>
-
+                 
+                 
 
                  
                   
@@ -146,11 +141,19 @@
                     </mat-grid-tile>
 
 
-                    <mat-grid-tile>
+                   
                       
-                          
-                          
+                      <mat-grid-tile>
                         
+                        <mat-label>Gender</mat-label>
+                        <mat-radio-group formControlName="gender">
+                          <mat-radio-button value="male">Male</mat-radio-button>
+                          <mat-radio-button value="female">Female</mat-radio-button>
+                        </mat-radio-group> 
+                       
+                        </mat-grid-tile>
+                          
+                        <mat-grid-tile>
                           <mat-checkbox formControlName="drivingLicense"   >I can drive</mat-checkbox>
                           
                           <mat-icon matSuffix >directions_car</mat-icon>
