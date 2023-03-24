@@ -30,35 +30,35 @@ router.patch(
   userCtr.updateUserRoles
 );
 router.post("/forgotPassword", userCtr.forgotPassword);
-router.post("/checkpass", authMiddleware, userCtr.checkPassword);
-router.post("/addUser",authMiddleware,userCtr.AddUser)
+router.post("/checkpass", userCtr.checkPassword);
+router.post("/addUser",userCtr.AddUser)
 router.post("/validateCode", userCtr.validateCode);
 router.post("/changePswdAutorisation/:id", userCtr.changePswdAutorisation);
 router.patch("/change-psw/:id", userCtr.changePswd);
 
 router.get("/getall", userCtr.getAllUsers);
-router.get("/sousTraitant", authMiddleware, userCtr.getAllUsers);
+router.get("/sousTraitant", userCtr.getAllUsers);
 
 
-router.post("/filter", authMiddleware, userCtr.filterUsers);
-router.post("/search", authMiddleware, userCtr.searchUsers);
+router.post("/filter",  userCtr.filterUsers);
+router.post("/search", userCtr.searchUsers);
 
 
 router.delete("/delete/:id",  userCtr.deleteUser);
 /******************************************* */
 /************ Event Managment ************** */
 /******************************************* */
-router.get("/events", authMiddleware, userEventCtr.getUserEvents);
-router.post("/setevent", authMiddleware, userEventCtr.createEvent );
+router.get("/events", userEventCtr.getUserEvents);
+router.post("/setevent", userEventCtr.createEvent );
 
 // router.get("/Plan", authMiddleware, userPlanCtr.getUserPlans);
 
-router.patch("/acceptEvent/:id", authMiddleware, userEventCtr.updateEvent);
+router.patch("/acceptEvent/:id", userEventCtr.updateEvent);
 
-router.delete("/deleteEvent/:id", authMiddleware, userEventCtr.deleteEvent);
+router.delete("/deleteEvent/:id", userEventCtr.deleteEvent);
 
-router.get("/:id", authMiddleware, userCtr.getUserById);
-router.get("/getPlanById/:id", authMiddleware, userPlanCtr.getPlanById);
+router.get("/:id", userCtr.getUserById);
+router.get("/getPlanById/:id", userPlanCtr.getPlanById);
 
 router.post("/upload",upload.single("pdf"), authMiddleware,userPlanCtr.uploadPlan);
 module.exports = router;
