@@ -20,9 +20,9 @@ router.delete(
 
 router.get("/search",  vehicleCtr.searchVehicle);
 /**Events Managment ********/
-router.get("/events", authMiddleware, vehicleCtr.getVehicleEvents);
-router.post("/setevent", authMiddleware, vehicleCtr.createEvent);
-router.patch("/acceptEvent/:id", authMiddleware, vehicleCtr.updateEvent);
-router.delete("/deleteEvent/:id", authMiddleware, vehicleCtr.deleteEvent);
+router.get("/events",  vehicleCtr.getVehicleEvents);
+router.post("/setevent",  vehicleCtr.createEvent);
+router.patch("/acceptEvent/:id",  vehicleCtr.updateEvent);
+router.delete("/deleteEvent/:id",  vehicleCtr.deleteEvent);
 
 module.exports = router;

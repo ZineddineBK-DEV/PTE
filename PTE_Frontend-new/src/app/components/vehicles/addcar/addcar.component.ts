@@ -5,7 +5,6 @@ import { MatDialogRef } from '@angular/material/dialog';
 import { Vehicle } from 'model/vehicle';
 import { VehiclesService } from '../vehicles.service';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { ChangeDetectorRef } from '@angular/core';
 
 @Component({
   selector: 'addcar',

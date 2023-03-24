@@ -7,6 +7,10 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class VehiclesService {
+
+  selectedVehicleId: string;
+  dateStart: string;
+  dateEnd: string;
 private _Vehicle="http://localhost:3001/api/material/vehicle"
   constructor(private http: HttpClient) { }
 
@@ -26,6 +30,15 @@ addVehicle(form : FormGroup){
 }
 
 
+  
+  setSelectedVehicleId(vehicleId: string) {
+    this.selectedVehicleId = vehicleId;
+  }
+
+  setDateRange(dateStart: string, dateEnd: string) {
+    this.dateStart = dateStart;
+    this.dateEnd = dateEnd;
+  }
 
 
 

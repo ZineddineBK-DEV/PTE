@@ -39,32 +39,8 @@
   <full-calendar #calendar [options]="calendarOptions" (dateClick)="DateClick($event)"></full-calendar>
 </div>
 
-<div *ngIf="showForm">
-  <h2>Create Vehicle Event</h2>
-  <form (ngSubmit)="onSubmit()">
-    <label>
-      Title:
-      <input type="text" [(ngModel)]="form.title" name="title" required>
-    </label>
-    <br>
-    <label>
-      Start date:
-      <input type="date" [(ngModel)]="form.start" name="start" required>
-    </label>
-    <br>
-    <label>
-      End date:
-      <input type="date" [(ngModel)]="form.end" name="end" required>
-    </label>
-    <br>
-    <label>
-      Vehicle:
-      <select [(ngModel)]="form.vehicle" name="vehicle" required>
-        <option *ngFor="let vehicle of vehicles" [value]="vehicle._id">{{ vehicle.registration_number }}</option>
-      </select>
-    </label>
-    <br>
-    <button type="submit">Create</button>
-    <button type="button" (click)="hideForm()">Cancel</button>
-  </form>
-</div>
+
+<a mat-raised-button color="orange" (click)="openMiniForm()">Book</a>
+
+
+

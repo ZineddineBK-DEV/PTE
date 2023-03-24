@@ -12,7 +12,7 @@ import { UploadService } from './upload.service';
   providedIn: 'root'
 })
 export class AuthService {
-  private apiBaseUrl = "http://localhost:3000/api";
+  private apiBaseUrl = "http://localhost:3001/api";
   private _loginUrl = "http://localhost:3001/api/login";
   private _SignuUpUrl = "http://localhost:3001/api/users/signup";
   private _BaseUrl = "http://localhost:3001/api/users/signup/requests";
@@ -37,6 +37,7 @@ export class AuthService {
     const url = `${this.apiBaseUrl}/users/:id${this.userId}`;
     return this.http.get<User>(url);
   }
+  
 
   loginUser(user) {
     this.http.post<User>(this._loginUrl, user).subscribe(response => {

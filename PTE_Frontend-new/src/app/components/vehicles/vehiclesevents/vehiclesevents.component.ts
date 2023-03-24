@@ -7,7 +7,8 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 import { FullCalendarComponent } from '@fullcalendar/angular';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import interactionPlugin from '@fullcalendar/interaction';
-
+import { EventformComponent } from '../eventform/eventform.component';
+import { MatDialog } from '@angular/material/dialog';
 
 
 
@@ -24,7 +25,7 @@ export class VehicleseventsComponent implements OnInit {
     showForm: boolean = false;
   form: any = {};
     
-  constructor(private vehiclesService : VehiclesService , private http : HttpClient , private formBuilder: FormBuilder ){}
+  constructor(private vehiclesService : VehiclesService , private http : HttpClient , private formBuilder: FormBuilder, private dialog: MatDialog ){}
   ngOnInit() {
     this.vehiclesService.getVehicle().subscribe((vehicles) => {
       this.vehicles = vehicles;
@@ -50,9 +51,8 @@ export class VehicleseventsComponent implements OnInit {
     },
   }
   DateClick(info: any) {
-    this.showForm = true;
-    this.form.start = info.dateStr;
-    this.form.end = info.dateStr;
+    this.vehiclesService.setDateRange(info.dateStr, info.dateStr);
+
   }
 
   
@@ -62,8 +62,8 @@ export class VehicleseventsComponent implements OnInit {
   
   
   onVehicleClick(vehicleId: string) {
-    this.selectedVehicleId = vehicleId;
-    console.log(this.selectedVehicleId)
+    this.vehiclesService.setSelectedVehicleId(vehicleId);
+
   }
   createEvent(start: Date, end: Date) {
     const data = {
@@ -87,6 +87,13 @@ export class VehicleseventsComponent implements OnInit {
       }
     );
   }
-
+  openMiniForm() {
+    const dialogRef = this.dialog.open(EventformComponent);
+  
+    dialogRef.afterClosed().subscribe(() => {
+      
+      console.log('Mini form dialog closed');
+    });
+  }
   
 }

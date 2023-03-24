@@ -1,0 +1,36 @@
+<form [formGroup]="eventform">
+    <mat-form-field>
+      <input matInput placeholder="title" formControlName="title">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <input matInput [matDatepicker]="startPicker" formControlName="start" required #start>
+            <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+            <mat-datepicker #startPicker></mat-datepicker>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <input matInput [matDatepicker]="endPicker" formControlName="end" required #end>
+      <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+      <mat-datepicker #endPicker></mat-datepicker>    </mat-form-field>
+
+    <!-- <mat-form-field>
+      <input matInput placeholder="vehicle" formControlName="vehicle">
+    </mat-form-field> -->
+
+    
+    <mat-form-field>
+      <input matInput placeholder="destination" formControlName="destination">
+    </mat-form-field>
+  
+
+    <!-- <mat-form-field>
+      <input matInput placeholder="applicant" formControlName="applicant">
+    </mat-form-field> -->
+  
+    <div class="button-row">
+      <button mat-raised-button color="orange" (click)="save()" >Save</button>
+      <button mat-raised-button (click)="cancel()">Cancel</button>
+    </div>
+  </form>
+  

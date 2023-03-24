@@ -20,6 +20,7 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
 import { VehicleseventsComponent } from './vehicles/vehiclesevents/vehiclesevents.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
+import { EventformComponent } from './vehicles/eventform/eventform.component';
 
 
 
@@ -57,6 +58,7 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     ChangepasswordComponent,
     VehicleseventsComponent,
     CalendarComponent,
+    EventformComponent,
     
     
     
