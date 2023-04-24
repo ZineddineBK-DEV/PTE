@@ -1,0 +1,25 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+
+<button class="close" mat-button (click)="onClose()">X</button>
+<div class="container">
+  <form #RoomForm="ngForm" (ngSubmit)="submit(RoomForm.value)">
+    <fieldset>
+      <legend>Conference Room</legend>
+      
+      <div class="form-group">
+        <label for="nom">Label :</label>
+        <input name="label" type="text" class="form-control" ngModel="" placeholder="Enter the label" required>
+      </div>
+      
+      
+      <div class="form-group">
+        <label for="nom">Location</label>
+        <input name="location" type="text" class="form-control" ngModel="" placeholder="Enter the location" required>
+      </div>
+      
+    </fieldset>
+    <button [disabled]="RoomForm.form.invalid" class="btn-add" type="submit">Save</button>
+    <!-- <button [disabled]="experienceForm.form.invalid" class="btn-add"type="submit">Add</button> -->
+  </form>
+</div>

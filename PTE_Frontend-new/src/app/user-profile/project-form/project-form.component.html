@@ -1,0 +1,30 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+
+<button class="close" mat-button (click)="onClose()">X</button>
+<div class="container">  
+    <form #projectForm="ngForm" (ngSubmit)="submit(projectForm.value)">
+      <fieldset>
+        <legend>Projects</legend>
+        
+        <div class="form-group">
+          <label for="nom">Organization</label>
+          <input name="organization" type="text" class="form-control" ngModel="" placeholder="Enter the organization's name"  required>
+        </div>
+        
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input name="title" type="text" class="form-control" ngModel="" placeholder="Enter the title" required>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Description</label>
+          <textarea name="description" class="form-control" ngModel="" rows="3" ></textarea>
+        </div>
+        
+      </fieldset>
+      <button [disabled]="projectForm.form.invalid"  class="btn-add"type="submit">Add</button>
+    </form>
+</div>

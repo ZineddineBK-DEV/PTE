@@ -2,40 +2,63 @@ const { ObjectId } = require("mongodb");
 const User = require("../models/user");
 const Cv = require("../models/cv");
 
+
 module.exports.updateCv = function (req, res, next) {
+
   const ID = req.params.id;
+  console.log(ID)
   if (!ObjectId.isValid(ID)) {
     return res.status(404).json("ID is not valid");
   }
   const body = { ...req.body };
-  if (body.skills) {
-    Cv.findByIdAndUpdate(ID, { $set: body })
-      .then((res) => {
-        res.status(200).json(res);
-        console.log(res);
-      })
-      .catch((err) => res.status(500).json(err));
-  } else {
-    Cv.findByIdAndUpdate(ID, { $push: body })
-      .then((res) => {
-        res.status(200).json(res);
-      })
-      .catch((err) => res.status(500).json(err));
-  }
-};
-
-module.exports.deleteElement = function (req, res) {
-  const ID = req.params.id;
-  if (!ObjectId.isValid(ID)) {
-    return res.status(404).json("ID is not valid");
-  }
-
-  Cv.findByIdAndUpdate(ID, { $pull: req.body })
+  console.log(body)
+  // if (body.skills) {
+  //   Cv.findByIdAndUpdate(ID, { $set: body })
+  //     .then((res) => {
+  //       res.status(200).json(res);
+  //       console.log(res);
+  //     })
+  //     .catch((err) => res.status(500).json(err));
+  // } else {
+  Cv.findByIdAndUpdate(ID, { $push: body })
     .then((res) => {
       res.status(200).json(res);
     })
     .catch((err) => res.status(500).json(err));
+  // }
 };
+
+// module.exports.deleteElement = function (req, res) {
+//   const ID = req.params.id;
+//   console.log("this id :",ID)
+//   if (!ObjectId.isValid(ID)) {
+//     return res.status(404).json("ID is not valid");
+//   }
+
+//   Cv.findByIdAndUpdate(ID, { $pull: req.body })
+//     .then((res) => {
+//       res.status(200).json(res);
+//     })
+//     .catch((err) => res.status(500).json(err));
+// };
+
+module.exports.deleteElement = async function (req, res) {
+  
+  const { id, arrayName, itemId } = req.params;
+  Cv.updateOne(
+    { _id: id },
+    { $pull: { [arrayName]: { _id: itemId } } },
+    { new: true }
+  )
+    .then((result) => {
+      res.status(200).json(result);
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json({ error: "Failed to delete item" });
+    });
+};
+
 
 module.exports.filterCvs = async function (req, res) {
   var skillsFilter = req.body.skills;

@@ -17,10 +17,13 @@
 */
 import { enableProdMode } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
-
+import {registerLicense} from '@syncfusion/ej2-base';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 import 'hammerjs';
+
+
+registerLicense("ORg4AjUWIQA/Gnt2VFhhQlJBfVpdXGtWfFN0RnNQdV9xflFAcDwsT3RfQF5jTX9bdERiXH1ac3JTQA==");
 
 if (environment.production) {
   enableProdMode();

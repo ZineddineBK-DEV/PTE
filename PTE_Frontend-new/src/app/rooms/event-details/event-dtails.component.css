@@ -1,0 +1,125 @@
+/* Style for the outermost div */
+.bg-white {
+    background-color: white;
+  }
+  
+  /* Padding and border-radius */
+  .p-10 {
+    padding: 10px;
+  }
+  
+  .rounded-lg {
+    border-radius: 10px;
+  }
+  
+  /* Font styles */
+  .font-medium {
+    font-weight: 500;
+  }
+  
+  .capitalize {
+    text-transform: capitalize;
+  }
+  
+  .underline {
+    text-decoration: underline;
+  }
+  
+  /* Style for the inner divs */
+  .inline-flex {
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  .space-x-16 > * + * {
+    margin-left: 16px;
+  }
+  
+  .ml-3 {
+    margin-left: 0.75rem;
+  }
+  
+  .w-36 {
+    width: 9rem;
+  }
+  
+  /* Style for the image */
+  .w-12 {
+    width: 3rem;
+  }
+  
+  .h-12 {
+    height: 3rem;
+  }
+  
+  .rounded-md {
+    border-radius: 0.375rem;
+  }
+  
+  .shadow-lg {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  }
+  
+  /* Style for the svg icons */
+  .text-gray-600 {
+    color: #718096;
+  }
+  
+  .text-gray-700 {
+    color: #4a5568;
+  }
+  
+  .shadow-xl {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+                0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+  
+  .text-lg {
+    font-size: 1.125rem;
+  }
+  
+  .text-2xl {
+    font-size: 1.5rem;
+  }
+  
+  /* Style for the horizontal line */
+  hr {
+    border: 0;
+    height: 1px;
+    background-color: #e2e8f0;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Style for the svg icons */
+  .pl-2 {
+    padding-left: 0.5rem;
+    margin-top: 15px;
+  }
+  
+  .pl-3 {
+    padding-left: 0.75rem;
+    margin-top: 15px;
+  }
+  
+  .pt-3 {
+    padding-top: 0.75rem;
+  }
+  
+  /* Style for the date and time section */
+  .pt-1 {
+    padding-top: 0.25rem;
+    margin-top: 2px;
+  }
+  
+  /* Style for the "Applicant" text */
+  .text-sm {
+    font-size: 0.875rem;
+  }
+
+  h5{
+    margin-top: 15px;
+    margin-right: 5px;
+  }
+  

@@ -106,6 +106,7 @@ const RoomCalendar = () => {
 
   const handleDatesSet = (data) => {
     /** Get query*/
+    console.log(data)
     const body = {
       start: data.start,
       end: data.end,

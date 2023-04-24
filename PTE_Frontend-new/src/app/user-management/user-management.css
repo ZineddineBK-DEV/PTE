@@ -1,0 +1,76 @@
+table {
+  width: 95%;
+  
+  
+  /*margin-top: 120px;*/
+  margin-left: 33px;
+  margin-right: 20px;
+}
+thead{
+  width: 95%;
+}
+
+.search-div{
+  margin-top: 120px;
+  margin-left: 33px;
+  width: 95%;
+    }
+    .search-form-field{
+        width: 40%;
+        /* margin-left: 10px; */
+        /* padding: 5px 10px; */
+        background-color: #141212;
+        border-radius: 1px;
+        }
+        .search-form-field div.mat-form-field-underline {
+            display: none;
+        }
+        .search-form-field div.mat-form-field-infix{
+            border-top: 0px;
+        }
+        .search-form-field div.mat-form-field-wrapper{
+          padding-bottom: 0px;
+      }
+      .search-form-field div.mat-form-field-suffix button{
+        height: 32px;
+        width: 32px;
+    }
+
+      /* for dialog pop-up */
+.btn-dialog-close{
+  width: 45px;
+  min-width: 0px !important;
+  height: 40px;
+  padding: 0px !important;
+}
+
+.mat-mdc-form-field-subscript-wrapper {
+  box-sizing: border-box;
+  width: 0%;
+  position: relative;
+  line-height: 0;
+}
+
+.form-control, .is-focused .form-control {
+  background-image: linear-gradient(to top, #f44336 2px, rgba(156, 39, 176, 0) 2px), linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px);
+}
+.relative{
+  margin-top: 35px;
+}
+
+.font-sm{
+  padding-bottom:40px;
+}
+
+
+.my-pagination-controls ul.pagination li.page-item:not(.active) a.page-link {
+  background: #f44336;
+}
+
+.ngx-pagination .current {
+  padding: 0.1875rem 0.625rem;
+  background: #f44336;
+  color: #fefefe;
+  cursor: default;
+}
+

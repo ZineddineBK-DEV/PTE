@@ -1,0 +1,28 @@
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"> -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+
+<button class="close" mat-button (click)="onClose()">X</button>
+<div class="container">
+  <form #certificationForm="ngForm" (ngSubmit)="submit(certificationForm.value)">
+    <fieldset>
+      <legend>Certifications</legend>
+      
+      <div class="form-group">
+        <label for="nom">Domaine :</label>
+        <input name="domaine" type="text" class="form-control" ngModel="" placeholder="Enter the domaine's name" required>
+      </div>
+      
+      
+      <div class="form-group ">
+        <label for="year">Year(yyyy)  :</label>
+        <input type="number" name="year" pattern="^\d{4}$" [class.is-invalid]="" class="form-control" ngModel="" placeholder="Enter year" min="1900" max="2099" step="1" value="2000" required>
+      </div>
+      
+    </fieldset>
+    <button [disabled]="certificationForm.form.invalid" class="btn-add" type="submit">Add</button>
+    <!-- <button [disabled]="experienceForm.form.invalid" class="btn-add"type="submit">Add</button> -->
+  </form>
+</div>
+

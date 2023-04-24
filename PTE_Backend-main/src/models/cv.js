@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const CvSchema = mongoose.Schema({
   user: { type: mongoose.Schema.Types.ObjectId, ref: "User" },
+  
   studies: [
     {
       establishment: { type: String, required: false, default: "" },
