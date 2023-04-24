@@ -1,0 +1,32 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<div class="_a9-v">
+    <div class="_a9-y">
+        &nbsp;
+        
+        <h3 class="_aacl _add7 _aacu _aacx _aad6" >Edit profile image</h3>
+    </div>
+    &nbsp;
+    <div class="_a9-z">
+
+        <button type="button" class="btn btn-outline-dark btn-lg btn-block" id="import-btn" (click)="onActive()">Import new image</button>
+        &nbsp;
+        <button type="button" class="btn btn-outline-dark btn-lg btn-block" id="import-btn" (click)="ondelete()">Delete this image</button>
+        &nbsp;
+
+        <button type="button" class="btn btn-outline-dark btn-lg btn-block" (click)="onClose()">Cancel</button>
+
+        
+        <input accept="image/jpeg,image/png" type="file" id="image-input" style="display: none;" (change)="onselectImage($event)">
+       
+
+        
+
+        <!-- <button class="_a9-- _a9_0" (click)="test()">Importer une photo</button>
+        <button class="_a9-- _a9-_" (click)="test()">Supprimer la photo actuelle</button>
+        <button class="_a9-- _a9_1" (click)="onClose()">Annuler</button>
+        <form enctype="multipart/form-data" method="POST" role="presentation">
+            <input accept="image/jpeg,image/png" class="_ac69" type="file">
+        </form> -->
+    </div>
+</div>

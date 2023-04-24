@@ -10,10 +10,11 @@ const Career = require("../models/career");
 const VehicleEvent = require("../models/material_resources/events/vehicleEvent");
 const RoomEvent = require("../models/material_resources/events/roomEvent");
 const UserEvent = require("../models/technical_team/userEvent");
-
+const multer = require('multer');
 const nodemailer = require("nodemailer");
 const moment = require("moment");
 const UserPlan = require("../models/technical_team/userPlan");
+const { file } = require("pdfkit");
 
 function setUserTitle(experience) {
   /* Check experience years and set a title for the Employee*/
@@ -60,8 +61,6 @@ module.exports.AddUser = async function (req, res, next) {
     res.status(500).json(error);
   }
 };
-
-
 
 module.exports.signUp = async function (req, res, next) {
   const body = { ...req.body };
@@ -175,19 +174,19 @@ module.exports.updateUserRoles = async function (req, res) {
   console.log(body);
   var userRoles = [];
 
-  body.roles.forEach((role) => {
-    if (role === "sales_assistant") {
-      userRoles.push(Roles.sales_assistant);
-    }
-    if (role === "virt_manager") {
-      userRoles.push(Roles.virt_manager);
-    }
-    if (role === "engineer") {
-      userRoles.push(Roles.Engineer);
-    }
-  });
+  // body.roles((role) => {
+  //   if (role === "sales_assistant") {
+  //     userRoles.push(Roles.sales_assistant);
+  //   }
+  //   if (role === "virt_manager") {
+  //     userRoles.push(Roles.virt_manager);
+  //   }
+  //   if (role === "engineer") {
+  //     userRoles.push(Roles.Engineer);
+  //   }
+  // });
   console.log(userRoles);
-  User.findByIdAndUpdate(ID, { $set: { roles: userRoles } })
+  User.findByIdAndUpdate(ID, { $set: { roles: body.roles } })
     .then(() => {
       res.status(200).json("roles updates");
     })
@@ -195,11 +194,13 @@ module.exports.updateUserRoles = async function (req, res) {
 };
 
 module.exports.UpdateUser = async function (req, res, next) {
+  
   const body = { ...req.body };
 
-  if (req.file) {
-    body.image = req.file.filename;
-  }
+  // if (req.file) {
+  //   body.image = req.file.name;
+  // }
+
   const ID = req.params.id;
   if (!ObjectId.isValid(ID)) {
     return res.status(404).json("ID is not valid");
@@ -227,6 +228,10 @@ module.exports.UpdateUser = async function (req, res, next) {
     .catch((err) => {
       return res.status(500).json(err);
     });
+};
+
+module.exports.UpdateImage = async function (req, res, next) {
+
 };
 
 module.exports.forgotPassword = async function (req, res, next) {
@@ -349,12 +354,12 @@ module.exports.getAllUsers = async function (req, res) {
   User.find({
     $and: [
       { isEnabled: true },
-      { _id: { $ne: req.user._id } },
+      //{ _id: { $ne: req.user._id } },
       { roles: { $ne: "admin" } },
     ],
   })
     .select("-password")
-    .populate("cv", "skills")
+    .populate("cv")
     .then((users) => {
       res.status(200).json(users);
     })

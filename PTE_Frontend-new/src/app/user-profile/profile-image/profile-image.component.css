@@ -1,0 +1,79 @@
+._a9-v {
+    align-items: stretch;
+    border: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    font: inherit;
+    font-size: 100%;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+._a9-y:first-child, ._a9-w:first-child {
+    margin-top: calc(2 * var(--modal-padding));
+}
+._a9-y {
+    align-items: stretch;
+    border: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    font: inherit;
+    font-size: 100%;
+    margin: var(--modal-padding) calc(2 * var(--modal-padding));
+    word-wrap: anywhere;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    vertical-align: baseline;
+}
+
+._a9-z {
+    align-items: stretch;
+    border: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    font: inherit;
+    font-size: 100%;
+    margin: 0;
+    margin-top: var(--modal-padding);
+    padding: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+._a9_0 {
+    color: rgb(var(--ig-primary-button));
+    font-weight: var(--font-weight-system-bold);
+}
+
+._a9-- {
+    background-color: transparent;
+    border-bottom: 0;
+    border-left: 0;
+    border-right: 0;
+    border-top: 1px solid rgb(var(--ig-elevated-separator));
+    cursor: pointer;
+    font-family: var(--font-family-system);
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0;
+    min-height: 48px;
+    padding: 4px 8px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.btn {
+    
+    --bs-btn-hover-bg: #f44336;
+    margin-left: 20px;
+    margin-right: 20px;
+}

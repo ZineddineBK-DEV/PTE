@@ -4,14 +4,14 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const path = require("path");
 const app = express();
+const multer = require('multer');
 // import { createServer } from "http";
 // import { Server } from "socket.io";
 
-// ============ imporing routes ================
+// ============ importing routes ================
 const usersRoute = require("./src/routes/user");
 const loginRoute = require("./src/routes/login");
 const cvRoute = require("./src/routes/cv");
-
 const careerRoute = require("./src/routes/career");
 
 /**Material Resources Routes */
@@ -53,9 +53,12 @@ mongoose
   })
   .catch((err) => console.log("error has been occured: ", err));
 
+
+
 // ========= configurring routes ==========
 app.use("/images", express.static(path.join("./src/static/images")));
 app.use("/pdf", express.static(path.join("./src/uploads/plans")));
+
 
 app.use("/api/users", usersRoute);
 app.use("/api/login", loginRoute);
@@ -67,46 +70,29 @@ app.use("/api/material/virtualization", virtualizationEnvRoute);
 app.use("/api/career", careerRoute);
 
 
-// const server=createServer(app);
 
-// const io = new Server(server, {
-//   pingTimeout: 60000,
-//   cors: {
-//     origin: "*",
-//   },
-// });
+// ====== for updloading profile image ======
 
-// io.on("connection", (socket) => {
-//   //connected to correct id
-//   socket.on("setup", (userData) => {
-//     socket.join(userData._id);
+const storage = multer.diskStorage({
+  destination: (req, file, callBack) => {
+      callBack(null, './src/static/images')
+  },
+  filename: (req, file, callBack) => {
+      callBack(null, `${file.originalname}`)
+  }
+})
 
-//     socket.emit("connected");
-//   });
+const upload = multer({ storage: storage })
 
-//   socket.on("join-chat", (room) => {
-//     socket.join(room);
-//   });
-
-//   socket.on("typing", (room) => socket.in(room).emit("typing"));
-//   socket.on("stop-typing", (room) => socket.in(room).emit("stop-typing"));
-
-//   socket.on("new-message", (newMessageReceived) => {
-//     let chat = newMessageReceived.chat;
-
-//     if (!chat.users) return console.log(`chat.users not defined`);
-
-//     chat.users.forEach((user) => {
-//       if (user._id === newMessageReceived.sender._id) return;
-
-//       socket.in(user._id).emit("message-received", newMessageReceived);
-//     });
-//   });
-
-//   socket.off("setup", () => {
-//     socket.leave(userData._id);
-//   });
-// });
+app.post('/file', upload.single('image'), (req, res, next) => {
+  const file = req.file;
+  if (!file) {
+    const error = new Error('No File')
+    error.httpStatusCode = 400
+    return next(error)
+  }
+    res.send(file);
+})
 
 // ======== exporting app ========
 module.exports = app;

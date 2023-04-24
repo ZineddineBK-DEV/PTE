@@ -1,0 +1,34 @@
+
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+
+<button class="close" mat-button (click)="close()">X</button>
+<div class="container">
+   <form #roomForm="ngForm" (ngSubmit)="submit(roomForm.value)">
+     <fieldset>
+       <legend>Set Event</legend>
+       
+       <div class="form-group">
+         <label for="title">Context</label>
+         <input name="title" type="text" class="form-control" ngModel="" placeholder="" required>
+       </div>
+       
+       <div class="row">
+         <div class="start">
+           <!-- <label for="start">Start</label> -->
+           <ejs-datetimepicker [(ngModel)]="originaltStartDate" (input)="checkDate()" #startPicker name="start" class="picker " placeholder="Choose a start date and time" required></ejs-datetimepicker>
+         </div>
+         
+         <div class="end">
+           <!-- <label for="end">End</label> -->
+           <ejs-datetimepicker [(ngModel)]="originaltEndDate" (input)="checkDate()" #endPicker name="end" class="picker " placeholder="Choose an end date and time" required></ejs-datetimepicker>
+         </div>
+       </div>
+       <div *ngIf=" errorDate == true" style="color: red;"> <small>* The end-date should be later than the start-date</small></div>
+     </fieldset>
+     
+     <button [disabled]="roomForm.form.invalid  "  class="btn-add" type="submit">Save</button>
+   </form>
+ </div>
+ 

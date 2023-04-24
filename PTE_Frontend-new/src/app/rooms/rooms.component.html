@@ -1,0 +1,51 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6" style="max-width: 400px;">
+                <div class="card" >
+                    <div class="card-header card-header-danger">
+                        <h6 class="card-title ">Conference rooms</h6>
+                    </div>
+      
+                    <div class="card-body">
+                        <div style="display: flex; align-items: center;">
+                            <button class="btn-add-room" (click)="addRoom()">Add Room</button>
+                            <mat-form-field floatLabel="always">
+                              <mat-label></mat-label>
+                              <!-- <a>Search</a> -->
+                              <input class="input-search" [(ngModel)]="search" matInput type="text" placeholder="Search : label/location">
+                            </mat-form-field>
+                        </div>
+                          
+                        
+                        <div class="section" *ngFor="let item of rooms | filter :search"    (mouseenter)="hoveredItem = item" (mouseleave)="hoveredItem = null">
+                          <div class="card" style="position:relative;">
+                            <div class="item" style="display:flex; align-items:center;">
+                              <div class="py-2 pl-2 col-span-4" style="flex:1; margin-left: 8px;">
+                                <strong class="text-slate-900 text-sm font-medium dark:text-slate-200 capitalize">Label : {{item.label}}</strong>
+                                <div><span class="text-slate-900 text-sm font-medium dark:text-slate-400 capitalize">Location : {{item.location}}</span>
+                                </div>
+                              </div>
+                              <button mat-icon-button class="no-print hidden-btn delete-btn" *ngIf="hoveredItem === item" color="warn" (click)="deleteRoom(item['_id'])" (mousedown)="highlightCard()"> <mat-icon>delete_outline</mat-icon></button>
+                              <button class="btn active-calender" (click)="toggleCalendar(item['_id'])">
+                                <mat-icon>east</mat-icon>
+                              </button>
+                            </div>
+                          </div> 
+                        </div>
+                        <!-- <button (click)="openEvent()">Events</button> -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8" style="width: 820px;">
+                <div class="mycontainer" *ngIf="showCalendar">
+                  <full-calendar #myCalendar [options]="calendarOptions"></full-calendar>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+ 
+
+  

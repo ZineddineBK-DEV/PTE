@@ -1,0 +1,25 @@
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://code.jquery.com/jquery-3.3.1.slim.min.js"> -->
+
+<button class="close" mat-button (click)="onClose()">X</button>
+<div class="container">  
+    <form #userForm="ngForm" (ngSubmit)="onUpdate(userForm.value)">
+        <fieldset>
+        <legend >Edit ser roles</legend>
+        
+        <div class="form-group"  style="width: 300px; margin-top: 40px;">
+            
+            <select class="form-select"   #mySelect (change)="onSelectionRole(mySelect.value)">
+              <option value="" selected hidden>{{data.roles}}</option>
+              <option value="sales_assistant">sales_assistant</option>
+              <option value="virt_manager">virt_manager</option>
+              <option value="engineer">engineer</option>
+            </select>
+        </div>
+        <button class="btn  profile-button" type="submit" style="background: #f44336;">Save updates</button>
+
+    </fieldset>
+    </form>
+</div>
