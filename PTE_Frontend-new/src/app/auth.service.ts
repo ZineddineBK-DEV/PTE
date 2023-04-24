@@ -1,18 +1,23 @@
 import { loged } from './../model/loged';
 import { AuthData } from './../model/authData';
-
+import jwt_decode from 'jwt-decode';
 import { Form, FormGroup, NgForm } from '@angular/forms';
 import { User } from 'model/user';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { Subject, Observable } from 'rxjs';
+import { Subject, Observable, throwError } from 'rxjs';
 import { UploadService } from './upload.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
+
+
 @Injectable({
   providedIn: 'root'
+  
 })
 export class AuthService {
-  private apiBaseUrl = "http://localhost:3000/api";
+  private apiBaseUrl = "http://localhost:3001/api";
   private _loginUrl = "http://localhost:3001/api/login";
   private _SignuUpUrl = "http://localhost:3001/api/users/signup";
   private _BaseUrl = "http://localhost:3001/api/users/signup/requests";
@@ -27,7 +32,7 @@ export class AuthService {
   file: File = null;
   image;
 
-  constructor(private http: HttpClient, private router: Router, private UploadService: UploadService) { }
+  constructor(private http: HttpClient, private router: Router, private UploadService: UploadService ,public dialog: MatDialog ) { }
 
   getAuthStatusListener() {
     return this.authStatusListener.asObservable();
@@ -37,6 +42,7 @@ export class AuthService {
     const url = `${this.apiBaseUrl}/users/:id${this.userId}`;
     return this.http.get<User>(url);
   }
+  
 
   loginUser(user) {
     this.http.post<User>(this._loginUrl, user).subscribe(response => {
@@ -44,8 +50,8 @@ export class AuthService {
       this.token = response.token;
       if (this.token) {
         this.setAuthTimer(response.expiresIn)
-        this.isAuthenticated = true;
-        this.userId = response.id;
+        
+        this.userId = response._id;
         console.log(this.userId);
         const now = new Date();
         const expirationDate = new Date(now.getTime() + response.expiresIn * 1000);
@@ -60,6 +66,13 @@ export class AuthService {
     })
     return this.token;
   }
+  isAuthed():boolean{
+    return localStorage.getItem('token')!=undefined;
+}
+checkEmailExists(email: string): Observable<boolean> {
+  return this.http.get<boolean>(`${this.apiBaseUrl}/users/email-exists?email=${email}`);
+}
+
 
   signup(form: FormGroup, file : File) {
     let success;
@@ -68,7 +81,8 @@ export class AuthService {
 
     const user = {
       image: file.name,
-      fullName: form.value.fullName,
+      firstName: form.value.firstName,
+      lastName: form.value.lastName,
       email: form.value.email,
       password: form.value.password,
       DateOfBirth: form.value.DateOfBirth,
@@ -77,25 +91,33 @@ export class AuthService {
       nationality: form.value.nationality,
       familySituation: form.value.familySituation,
       address: form.value.address,
-      roles: form.value.roles,
       experience: form.value.experience,
       hiringDate: form.value.hiringDate,
       department: form.value.department,
       drivingLicense: form.value.drivingLicense,
-      title: form.value.title,
+      
     }
 
 
 
-    this.http.post<User>(this._SignuUpUrl, user).subscribe(response => {
-      if (response["error"]) {
-        success = false;
-        return null;
+    this.http.post<User>(this._SignuUpUrl, user).subscribe(
+      response => {
+        
+      console.log(response);
+      
+      this.router.navigate(['/login']);
+    },
+    error => {
+      if (error.status === 400) {
+        console.log('Email already exists');
+        const dialogRef = this.dialog.open(ErrorDialogComponent, {
+          data: { message: 'Email already exists' },
+        });
+        success=false
       }
-      success = true
-      this.router.navigate(["/login"])
-    })
-    return success;
+    }
+  );
+  return success
   }
 
   setAuthTimer(expiresIn: number) {
@@ -125,21 +147,21 @@ export class AuthService {
     localStorage.removeItem("expiration");
     localStorage.removeItem("userId");
   }
-  private getAuthData() {
-    const token = localStorage.getItem("token");
-    const expirationDate = localStorage.getItem("expiration")
-    this.userId = localStorage.getItem("userId")
-    this.roles = localStorage.getItem("roles")
-    if (!token || !expirationDate) return null;
-    return { token: token, expirationDate: new Date(expirationDate), role: String }
-  }
+  // private getAuthData() {
+  //   const token = localStorage.getItem("token");
+  //   const expirationDate = localStorage.getItem("expiration")
+  //   this.userId = localStorage.getItem("userId")
+  //   this.roles = localStorage.getItem("roles")
+  //   if (!token || !expirationDate) return null;
+  //   return { token: token, expirationDate: new Date(expirationDate), role: String }
+  // }
   getSignUpRequests(): Observable<any> {
     // return this.http.get<User>(this._BaseUrl);
     const url = `${this._BaseUrl}?isEnabled=false`; // Add the query parameter to filter disabled users
     return this.http.get<User[]>(url);
 
   }
-  private getUser(token: string): User {
+   getUser(token: string): User {
     const roles = JSON.parse(atob(token.split('.')[1])) as User;
     return roles;
 
@@ -148,6 +170,26 @@ export class AuthService {
   forgotPassword(email:string){
     return this.http.post("http://localhost:3001/api/users/forgotPassword", { email });
 
+  }
+  getAuthData() {
+    const token = localStorage.getItem("token");
+    const expirationDate = localStorage.getItem("expiration");
+    this.userId = localStorage.getItem("userId");
+    this.token = token;
+    
+    const decodedToken = jwt_decode(token) as { roles: string }; // Decode the token and cast it to the expected type
+    this.roles = decodedToken.roles;
+
+    if (!token || !expirationDate) {
+      return null;
+    }
+
+    return {
+      token: this.token,
+      
+      roles: this.roles,
+      userId: this.userId
+    };
   }
 
 }

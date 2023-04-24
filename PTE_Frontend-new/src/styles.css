@@ -18,3 +18,43 @@ h1 {font-family: 'Mukta', sans-serif;}
     background-color: rgb(49, 177, 79);
     color: #fff;
 }
+.mat-raised-button{
+    background-color: #0f3ac5;
+    color: #fff;
+}
+.sidebar[data-color=danger] li.active > a {
+    background-color: #0f3ac5;
+    box-shadow: 0 4px 20px 0px rgb(0 0 0 / 14%), 0 7px 10px -5px rgb(42 61 197 / 40%);
+}
+a:hover, a:focus {
+    color: #000000;
+    text-decoration: none;
+}
+.card .card-header-danger .card-icon, .card .card-header-danger .card-text, .card .card-header-danger:not(.card-header-icon):not(.card-header-text), .card.bg-danger, .card.card-rotate.bg-danger .front, .card.card-rotate.bg-danger .back {
+    background: #0f3ac5;
+}   
+
+.sidebar .logo {
+    padding: 38px 0px;
+    margin: 0;
+    display: block;
+    position: relative;
+    z-index: 4;
+}
+.sidebar .logo-img img {
+    width: 150px;
+    top: -14px;
+    position: absolute;
+    left: 56px;
+}
+.mat-radio-button.mat-accent .mat-radio-inner-circle{  
+     background-color: #0f3ac5;
+    }
+
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+        border-color: #0f3ac5;
+    }
+.mat-checkbox-indeterminate.mat-accent .mat-checkbox-background, .mat-checkbox-checked.mat-accent .mat-checkbox-background {
+        background-color: #0f3ac5;
+    }
+ 

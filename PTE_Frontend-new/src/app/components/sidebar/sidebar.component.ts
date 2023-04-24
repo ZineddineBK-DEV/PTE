@@ -14,7 +14,7 @@ export const ROUTES: RouteInfo[] = [
     { path: '/requests' , title:'requests' , icon:'person_add' , class:''},
     { path : '/vehicles' , title:'vehicles' , icon:'directions_car' , class:''},
     {path :'/vehiclesevents' , title:'Vehicles events', icon:'directions_car' , class:''},
-    {path: '/calendar' , title:'Calendar' , icon:'' , class:''}
+    {path :'/calendar' , title:'calendar', icon:'directions_car' , class:''},
     
     
 

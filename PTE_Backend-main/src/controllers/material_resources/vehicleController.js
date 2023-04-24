@@ -1,10 +1,16 @@
 const { ObjectId } = require("mongodb");
 const Vehicle = require("../../models/material_resources/vehicle");
 const VehicleEvent = require("../../models/material_resources/events/vehicleEvent");
+
+
+
 /** Add Vehicle */
 module.exports.addVehicle = async function (req, res) {
   try {
     const body = { ...req.body };
+    const Exists = await Vehicle.findOne({ registration_number: req.body.registration_number });
+  if (Exists) {
+    return res.status(400).send('Registration number already exists');}
     const vehicle = await Vehicle.create({ ...body });
     if (vehicle) {
       res.status(200).json(vehicle);
@@ -13,6 +19,7 @@ module.exports.addVehicle = async function (req, res) {
     res.status(500).json(error);
   }
 };
+
 /** Delete Vehicle */
 module.exports.deleteVehicle = async function (req, res) {
   const ID = req.params.id;
@@ -29,6 +36,40 @@ module.exports.deleteVehicle = async function (req, res) {
     res.status(500).json(error);
   }
 };
+/** update vehicle  */
+module.exports.UpdateVehicle = async function(req, res, next) {
+  const ID = req.params.id;
+
+  if (!ObjectId.isValid(ID)) {
+    return res.status(404).json('ID is not valid');
+  }
+  const Exists = await Vehicle.findOne({ registration_number: req.body.registration_number });
+  if (Exists) {
+    return res.status(400).send('Registration number already exists');}
+
+  try {
+    const updatedVehicle = await Vehicle.findByIdAndUpdate(
+      ID,
+      {
+        model: req.body.model,
+        registration_number: req.body.registration_number,
+        type: req.body.type,
+      },
+      { new: true } // return the updated document
+    );
+
+    if (!updatedVehicle) {
+      return res.status(404).json('Vehicle not found');
+    }
+
+    return res.json(updatedVehicle);
+  } catch (err) {
+    console.error(err);
+    return res.status(500).json('Server error');
+  }
+};
+
+
 /** getAllVehicles  */
 module.exports.getAllVehicles = async function (req, res, next) {
   try {

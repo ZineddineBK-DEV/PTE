@@ -20,6 +20,18 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
 import { VehicleseventsComponent } from './vehicles/vehiclesevents/vehiclesevents.component';
 import { CalendarComponent } from './calendar/calendar.component';
 import { FullCalendarModule } from '@fullcalendar/angular';
+import { EventformComponent } from './vehicles/eventform/eventform.component';
+import { ConfirmationDialogComponent } from './confirmation-dialog/confirmation-dialog.component';
+
+import { MatDialogModule } from '@angular/material/dialog';
+import { ErrorDialogComponent } from './error-dialog/error-dialog.component';
+import { EditVehicleComponent } from './vehicles/edit-vehicle/edit-vehicle.component';
+
+
+
+
+
+
 
 
 
@@ -32,8 +44,11 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
-    FullCalendarModule
+    FullCalendarModule,
+    MatDialogModule,
     
+    
+   
     
     
     
@@ -57,6 +72,10 @@ import { FullCalendarModule } from '@fullcalendar/angular';
     ChangepasswordComponent,
     VehicleseventsComponent,
     CalendarComponent,
+    EventformComponent,
+    ConfirmationDialogComponent,
+    ErrorDialogComponent,
+    EditVehicleComponent,
     
     
     

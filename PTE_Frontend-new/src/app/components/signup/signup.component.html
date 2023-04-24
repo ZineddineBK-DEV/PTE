@@ -5,34 +5,70 @@
         <h1>Sign Up</h1>
         <form [formGroup]="registerForm" (ngSubmit)="onSubmit(image)" enctype="multipart/form-data">
           
-      <mat-grid-list cols="2" rowHeight="14:3" gutterSize="7px"  >
-        <mat-grid-tile colspan="2">
-          <mat-form-field>
+      <mat-grid-list cols="2" rowHeight="10:3" gutterSize="7px"  >
+        
+        
+        <mat-grid-tile >
+          
+             <input matInput   type="file"  formControlName="image" (change)="onFileSelected($event)" #image> 
             
-            
-            <input matInput   type="file"  formControlName="image" (change)="onFileSelected($event)" #image> 
-          </mat-form-field>
+          
           </mat-grid-tile> 
+
+          <mat-grid-tile>
+                        
+            <mat-label>Gender</mat-label>
+            <mat-radio-group formControlName="gender">
+              <mat-radio-button value="male">Male</mat-radio-button>
+              <mat-radio-button value="female">Female</mat-radio-button>
+            </mat-radio-group> 
+            
+
+            </mat-grid-tile>
+              
+            
+
+
         <mat-grid-tile>
           <mat-form-field>
-            <mat-label>Full Name</mat-label>
+            <mat-label>First Name</mat-label>
             <mat-icon matSuffix >account_circle</mat-icon>
-            <input matInput formControlName="fullName" type="text" required #fullName> 
+            <input matInput formControlName="firstName" type="text"  #firstName > 
+            <mat-error *ngIf="registerForm.get('firstName').hasError('required')">Please enter your first name</mat-error>
+
           </mat-form-field>
           </mat-grid-tile>
+
+          <mat-grid-tile>
+            <mat-form-field>
+              <mat-label>Last Name</mat-label>
+              <mat-icon matSuffix >account_circle</mat-icon>
+              <input matInput formControlName="lastName" type="text"  #lastName> 
+              <mat-error *ngIf="registerForm.get('lastName').hasError('required')">Please enter your last name</mat-error>
+
+            </mat-form-field>
+            </mat-grid-tile>
+
+
           <mat-grid-tile>
           <mat-form-field>
                 <mat-label>Email</mat-label>
                 <mat-icon matSuffix >mail_outline</mat-icon>
-                <input matInput formControlName="email" type="email" required #email> 
-              </mat-form-field>
+                <input matInput formControlName="email" type="email"  #email> 
+                <mat-error *ngIf="registerForm.get('email').hasError('required')">Please enter your email</mat-error>
+                <mat-error *ngIf="registerForm.get('email').hasError('email')">Please enter a valid email</mat-error>
+                
+                </mat-form-field>
             </mat-grid-tile>
             
             <mat-grid-tile>
           <mat-form-field>
             <mat-label>Password</mat-label>
             <mat-icon matSuffix >lock_open</mat-icon>
-            <input matInput type="password" formControlName="password" required #password> 
+            <input matInput type="password" formControlName="password"  #password> 
+            <mat-error *ngIf="registerForm.get('password').hasError('required')">Please enter your password</mat-error>
+            <mat-error *ngIf="registerForm.get('password').hasError('minlength')" style="color: red;">Your password should have at least 6 characters </mat-error>
+
           </mat-form-field>
           </mat-grid-tile>
             
@@ -40,31 +76,45 @@
            <mat-form-field>
             <mat-label>Confirm Password</mat-label>
             <mat-icon matSuffix >lock_open</mat-icon>
-            <input matInput type="password" formControlName="confirmPassword" required #confirmPassword> 
+            <input matInput type="password" formControlName="confirmPassword"  #confirmPassword> 
+            <mat-error *ngIf="registerForm.get('confirmPassword').hasError('required')">Please enter your confirmation password</mat-error>
+            <mat-error *ngIf="registerForm.get('confirmPassword').hasError('matchValues')">Your confirmation password should match your password </mat-error>
+
+ 
            </mat-form-field>
           </mat-grid-tile>
           <mat-grid-tile>
            <mat-form-field>
             <mat-label>Phone Number</mat-label>
             <mat-icon matSuffix >call</mat-icon>
-            <input matInput type="tel" formControlName="phone" required #phone> 
-           </mat-form-field>
+            <input matInput type="tel" formControlName="phone"  #phone > 
+            <mat-error *ngIf="registerForm.get('phone').hasError('required')">Please enter your phone number</mat-error>
+            <mat-error *ngIf="registerForm.get('phone').hasError('maxlength')" style="color: red;">Your phone number should have 8 digits </mat-error>
+            <mat-error *ngIf="registerForm.get('phone').hasError('minlength')" style="color: red;">Your phone number should have 8 digits </mat-error>
+            <mat-error *ngIf="registerForm.get('phone').hasError('pattern')" style="color: red;">Your phone number can only contain digits </mat-error>
+
+         </mat-form-field>
         </mat-grid-tile>
+
         <mat-grid-tile>
           <mat-form-field> 
             <mat-label>Birthday</mat-label>
-            <input matInput [matDatepicker]="picker" formControlName="DateOfBirth" required #DateOfBirth>
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
+            <input matInput [matDatepicker]="birthdaypicker" formControlName="DateOfBirth"  #DateOfBirth>
+            <mat-datepicker-toggle matSuffix [for]="birthdaypicker"></mat-datepicker-toggle>
+            <mat-datepicker #birthdaypicker></mat-datepicker>
+            <mat-error *ngIf="registerForm.get('DateOfBirth').hasError('required')">Please enter your birthday</mat-error>
+
           </mat-form-field>
         </mat-grid-tile>
 
         <mat-grid-tile>
           <mat-form-field> 
             <mat-label>hiringDate</mat-label>
-            <input matInput [matDatepicker]="picker" formControlName="hiringDate"  #hiringDate>
-            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
+            <input matInput [matDatepicker]="hiringpicker" formControlName="hiringDate"  #hiringDate>
+            <mat-datepicker-toggle matSuffix [for]="hiringpicker"></mat-datepicker-toggle>
+            <mat-datepicker #hiringpicker></mat-datepicker>
+            <mat-error *ngIf="registerForm.get('hiringDate').hasError('required')">Please enter your hiring date</mat-error>
+
           </mat-form-field>
         </mat-grid-tile>
 
@@ -74,6 +124,8 @@
                 <mat-label>nationality</mat-label>
                 <mat-icon matSuffix >public</mat-icon>
                 <input matInput formControlName="nationality" type="text"  #nationality> 
+                <mat-error *ngIf="registerForm.get('nationality').hasError('required')">Please enter your nationality</mat-error>
+
               </mat-form-field>
             </mat-grid-tile>
             
@@ -83,6 +135,8 @@
                 <mat-label>family situation</mat-label>
                 <mat-icon matSuffix >family_restroom</mat-icon>
                 <input matInput formControlName="familySituation" type="text"  #familySituation> 
+                <mat-error *ngIf="registerForm.get('familySituation').hasError('required')">Please enter your family situation</mat-error>
+
               </mat-form-field>
               </mat-grid-tile>
               
@@ -91,30 +145,21 @@
                     <mat-label>Address</mat-label>
                     <mat-icon matSuffix >home</mat-icon>
                     <input matInput formControlName="address" type="text"  #address> 
+                    <mat-error *ngIf="registerForm.get('address').hasError('required')">Please enter your address</mat-error>
+
                   </mat-form-field>
                 </mat-grid-tile>
 
 
 
-                <mat-grid-tile>
-                  <mat-form-field formControlName="roles" #roles>
-                    <mat-label>Select your role</mat-label>
-                    <mat-icon matSuffix >engineering</mat-icon>
-                    <mat-select>
-                      
-                      <mat-option value="Engineer">Engineer</mat-option>
-                      <mat-option value="sales_assistant">sales_assistant</mat-option>
-                      <mat-option value="virt_manager">virt_manager</mat-option>
-                    </mat-select>
-                   
-                  </mat-form-field>
-               </mat-grid-tile>
                
                <mat-grid-tile>
                 <mat-form-field>
                       <mat-label>Experience</mat-label>
                       <mat-icon matSuffix >badge</mat-icon>
                       <input matInput formControlName="experience" type="number"  #experience> 
+                      <mat-error *ngIf="registerForm.get('experience').hasError('required')">Please enter your experience</mat-error>
+
                     </mat-form-field>
                   </mat-grid-tile>
 
@@ -123,7 +168,9 @@
                     <mat-form-field>
                      <mat-label>department</mat-label>
                      <mat-icon matSuffix >apartment</mat-icon>
-                     <input matInput type="text" formControlName="department"  #department> 
+                     <input matInput type="text" formControlName="department"  #department>
+                     <mat-error *ngIf="registerForm.get('department').hasError('required')">Please enter your department</mat-error>
+ 
                     </mat-form-field>
                  </mat-grid-tile>
                  
@@ -132,31 +179,19 @@
 
                  
                   
-                  <mat-grid-tile>
-                  <mat-form-field>
-                        <mat-label>title</mat-label>
-                        <mat-icon matSuffix >title</mat-icon>
-                        <input matInput formControlName="title" type="text"  #title> 
-                      </mat-form-field>
-                    </mat-grid-tile>
+                  
 
 
                    
                       
-                      <mat-grid-tile>
-                        
-                        <mat-label>Gender</mat-label>
-                        <mat-radio-group formControlName="gender">
-                          <mat-radio-button value="male">Male</mat-radio-button>
-                          <mat-radio-button value="female">Female</mat-radio-button>
-                        </mat-radio-group> 
-                       
-                        </mat-grid-tile>
+                    
                           
                         <mat-grid-tile>
                           <mat-checkbox formControlName="drivingLicense"   >I can drive</mat-checkbox>
                           
                           <mat-icon matSuffix >directions_car</mat-icon>
+                          <mat-error *ngIf="registerForm.get('drivingLicense').hasError('required')">Please choose an option</mat-error>
+
                         
                     </mat-grid-tile>
         

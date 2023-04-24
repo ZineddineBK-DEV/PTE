@@ -11,8 +11,8 @@
                     <div class="card-body">
                         <mat-form-field>
                             <mat-label></mat-label>
-                            <a (click)="search()">Search</a>
-                            <input matInput [(ngModel)]="searchText" type="text" placeholder="Enter search text">
+                            
+                            <input matInput (ngModelChange)="searchVehicle(key.value)" #key="ngModel" ngModel name="key" id="searchName" type="text" placeholder="Enter search text">
                           </mat-form-field>
                             
                         
@@ -29,6 +29,7 @@
                                   <th>Type</th>
 
                                   <th>Manage</th>
+
                                       
                               </thead>
                                 <tbody>
@@ -37,7 +38,11 @@
                                      <td>{{ vehicle.model }} </td>
                                      <td>{{ vehicle.registration_number }} </td> 
                                       <td> {{ vehicle.type }}</td>
-                                      <td>  <a (click)="deleteVehicle(vehicle._id)"> <mat-icon matSuffix >delete</mat-icon></a> </td>
+                                      <td>  <a (click)="deleteVehicle(vehicle._id)"> <mat-icon matSuffix color="red">delete</mat-icon></a> 
+                                        <a><mat-icon matSuffix (click)="openupdateForm(vehicle._id)">edit</mat-icon></a>
+                                    
+                                    </td>
+                                       
                                       
                                       
                                     

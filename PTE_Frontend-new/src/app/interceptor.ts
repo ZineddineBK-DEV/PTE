@@ -5,9 +5,9 @@ import { HttpInterceptor, HttpHandler, HttpRequest } from '@angular/common/http'
 export class JwtInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<any>, next: HttpHandler) {
     
-    const token = localStorage.getItem('jwt');
+    const token = localStorage.getItem('token');
 
-    
+    console.log("hougabouga");
     if (token) {
       request = request.clone({
         setHeaders: {

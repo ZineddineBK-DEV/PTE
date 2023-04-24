@@ -1,18 +1,22 @@
 
-import { catchError, Observable, Subscription, switchMap, throwError } from 'rxjs';
+import {  Observable, throwError } from 'rxjs';
 import { UploadService } from 'app/upload.service';
 
 
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'app/auth.service';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { User } from 'model/user';
+import { MatSnackBar } from '@angular/material/snack-bar';
+
 @Component({
   selector: 'signup',
   templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  styleUrls: ['./signup.component.css'],
+  providers: [MatSnackBar]
+
 })
 export class SignupComponent implements OnInit {
   
@@ -23,31 +27,42 @@ export class SignupComponent implements OnInit {
   user : User;
   drivingLicense: any;
   
-  constructor(private AuthService: AuthService, private router: Router,private http : HttpClient, private fb: FormBuilder , private UploadService : UploadService) { }
+  constructor(private AuthService: AuthService, private router: Router,private http : HttpClient, private fb: FormBuilder , private UploadService : UploadService,private snackBar: MatSnackBar) { }
   ngOnInit(): void {
     this.registerForm= this.fb.group({
-    image: [''],
-    fullName: [''],
-    email: [''],
-    password: [''] ,
-    confirmPassword: [''],
-    phone: [''],
-    DateOfBirth: [''] ,
-    gender : [''],
-    nationality:[''],
-    familySituation:[''],
-    address:[''],
-    roles:[''],
-    experience:[''],
-    hiringDate:[''],
-    department:[''],
-    drivingLicense:['true'],
-    title:['']
+    image: ['',Validators.required],
+    firstName: ['',Validators.required],
+    lastName: ['',Validators.required],
+    email: ['', [Validators.required, Validators.email]],
+    password: ['',[Validators.required, Validators.minLength(6)]] ,
+    confirmPassword: ['', [Validators.required, this.matchValues('password')]],
+    phone: ['' , [Validators.required, Validators.maxLength(8), Validators.minLength(8) , Validators.pattern('^[0-9]*$')]],
+    DateOfBirth: ['',Validators.required] ,
+    gender : ['',Validators.required],
+    nationality:['',Validators.required],
+    familySituation:['',Validators.required],
+    address:['',Validators.required],
+    experience:['',Validators.required],
+    hiringDate:['',Validators.required],
+    department:['',Validators.required],
+    drivingLicense:['true',Validators.required],
+    
 
 
 
     })
    }
+
+   matchValues(matchTo: string): ValidatorFn {
+    return (control: AbstractControl): { [key: string]: any } => {
+      const input = control.value;
+      const isValid = control.root.value[matchTo] === input;
+      return isValid ? null : { 'matchValues': true };
+    };
+  }
+  
+
+  
    
   
   onFileSelected(event) {
@@ -59,6 +74,8 @@ export class SignupComponent implements OnInit {
     console.error('An error occurred:', error);
     return throwError(error);
   }
+
+  
   onSubmit(image){
     
     
@@ -70,29 +87,6 @@ export class SignupComponent implements OnInit {
        this.success=this.AuthService.signup(this.registerForm , image);
       
    }}
-  // if (this.file && this.registerForm.valid) {
-  //   this.UploadService.uploadFormData(this.file).pipe(
-  //     switchMap(uploadResponse => {
-  //       const formData = new FormData();
-  //       formData.append('fullName', this.registerForm.value.fullName);
-  //       formData.append('password', this.registerForm.value.password);
-  //       formData.append('email', this.registerForm.value.email);
-        
-  //       formData.append('image', uploadResponse.file);
-  //       formData.append('imageName', uploadResponse.filename);
-  //       return this.AuthService.signup(this.registerForm,formData);
-  //     }),
-  //     catchError(this.handleError)
-  //   ).subscribe(
-  //     response => {
-  //       console.log('Signup successful:', response);
-  //       // Handle successful signup
-  //     },
-  //     error => {
-  //       console.error('Signup error:', error);
-  //       // Handle signup error
-  //     }
-  //   );
-  // }
+  
   
   }

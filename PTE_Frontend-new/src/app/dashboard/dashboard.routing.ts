@@ -18,17 +18,17 @@ import { VehicleseventsComponent } from 'app/components/vehicles/vehiclesevents/
 export const dashboardRoutes: Routes = [
    
     
-    { path: 'user-profile',   component: UserProfileComponent },
-    { path: 'user-management',     component: TableListComponent },
+    { path: 'user-profile',canActivate:[AuthGuard],   component: UserProfileComponent },
+    { path: 'user-management', canActivate:[AuthGuard],    component: TableListComponent },
     { path: 'requests',
     canActivate:[AuthGuard,RoleGuard] ,
-    component: SignUpRequestsComponent,
-    data :{
-        role: 'admin',
-    }},
-    { path: 'vehicles',   component: VehiclesComponent },
-    {path : 'vehiclesevents', component:VehicleseventsComponent},
-    {path:'calendar' , component:CalendarComponent}
+    component: SignUpRequestsComponent
+    },
+    { path: 'vehicles', canActivate:[AuthGuard,RoleGuard],  component: VehiclesComponent ,
+      },
+    {path : 'vehiclesevents',canActivate:[AuthGuard], component:VehicleseventsComponent},
+    {path : 'calendar',canActivate:[AuthGuard], component:CalendarComponent}
+    
     
    
     

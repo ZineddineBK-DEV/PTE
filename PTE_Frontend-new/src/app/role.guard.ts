@@ -10,7 +10,8 @@ export class RoleGuard implements CanActivate {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-      return this.authService.user.roles.includes(route.data.role);
+      const role = this.authService.getAuthData().roles.includes('admin');
+      return role;
   }
   
 }

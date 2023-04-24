@@ -12,59 +12,21 @@
               <a (click)="search()">Search</a>
               <input matInput [(ngModel)]="searchText" type="text" placeholder="Enter search text">
             </mat-form-field>
-            <div class="table-responsive">
-              <table class="table">
-                <thead class="text-primary">
-                  <th>Model</th>
-                  <th>Registration number</th>
-                  <th>Type</th>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let vehicle of vehicles" (click)="onVehicleClick(vehicle._id)">
-                    <td>{{ vehicle.model }}</td>
-                    <td>{{ vehicle.registration_number }}</td>
-                    <td>{{ vehicle.type }}</td>
-                  </tr>
-                </tbody>
-              </table>
+            <div class="vehicle-container">
+              <div class="vehicle-box" *ngFor="let vehicle of vehicles" (click)="onVehicleClick(vehicle._id)">
+                <div class="car-icon"><mat-icon matSuffix >garage</mat-icon></div>
+                <div class="vehicle-model">{{ vehicle.model }}</div>
+                <div class="vehicle-registration">{{ vehicle.registration_number }}</div>
+                <div class="vehicle-type">{{ vehicle.type }}</div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-</div> 
-
-<div class="calendarcontainer">
-  <full-calendar #calendar [options]="calendarOptions" (dateClick)="DateClick($event)"></full-calendar>
 </div>
 
-<div *ngIf="showForm">
-  <h2>Create Vehicle Event</h2>
-  <form (ngSubmit)="onSubmit()">
-    <label>
-      Title:
-      <input type="text" [(ngModel)]="form.title" name="title" required>
-    </label>
-    <br>
-    <label>
-      Start date:
-      <input type="date" [(ngModel)]="form.start" name="start" required>
-    </label>
-    <br>
-    <label>
-      End date:
-      <input type="date" [(ngModel)]="form.end" name="end" required>
-    </label>
-    <br>
-    <label>
-      Vehicle:
-      <select [(ngModel)]="form.vehicle" name="vehicle" required>
-        <option *ngFor="let vehicle of vehicles" [value]="vehicle._id">{{ vehicle.registration_number }}</option>
-      </select>
-    </label>
-    <br>
-    <button type="submit">Create</button>
-    <button type="button" (click)="hideForm()">Cancel</button>
-  </form>
+<div class="calendarcontainer" *ngIf="showCalendar">
+  <full-calendar #calendar [options]="calendarOptions" (dateClick)="dateClick()"></full-calendar>
 </div>

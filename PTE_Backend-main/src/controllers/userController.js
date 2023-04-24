@@ -66,6 +66,9 @@ module.exports.AddUser = async function (req, res, next) {
 
 module.exports.signUp = async function (req, res, next) {
   const body = { ...req.body };
+  const emailExists = await User.findOne({ email: req.body.email });
+  if (emailExists) {
+    return res.status(400).send('Email already exists');}
 if (req.file){
   body.image = req.file.filename;
 }
@@ -135,7 +138,7 @@ module.exports.login = async function (req, res, next) {
     const token = jwt.sign(
       {
         email: fetchedUser.email,
-        id: fetchedUser._id,
+        _id: fetchedUser._id,
         roles : fetchedUser.roles
       },
       "secret_this_should_be_longer",
@@ -146,13 +149,14 @@ module.exports.login = async function (req, res, next) {
       expiresIn: 6000,
       userName: fetchedUser.fullName,
       image: fetchedUser.image,
-      id: fetchedUser._id,
+      _id: fetchedUser._id,
       roles: fetchedUser.roles,
     });
   } catch (error) {
     return res.status(500).json({ message: "problem in bycript" });
   }
 };
+
 module.exports.checkPassword = async function (req, res, next) {
   try {
     let fetchedUser = await User.findById(req.body.id);

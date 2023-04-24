@@ -12,16 +12,16 @@
                               <thead class=" text-primary">
                                   <th>Image</th>
                                 <th>
-                                      Full name
+                                      First name
                                   </th>
                                   <th>
-                                      Email
+                                      Last name
                                   </th>
                                    <th>
-                                    Role
+                                    Email
                                    </th>
                                    <th>
-                                    User id
+                                    Phone number
                                    </th>
 
                                   <th>Manage request</th>
@@ -31,10 +31,10 @@
                               <tbody>
                                 <tr *ngFor="let user of users" >
                                     <img  [src]="'http://localhost:3001/images/'+ user.image">
-                                    <td>{{ user.fullName }} </td> 
-                                  <td>{{ user.email }} </td>
-                                  <td> {{ user.roles}}</td>
-                                  <td> {{ user._id}}</td>
+                                    <td>{{ user.firstName }} </td> 
+                                  <td>{{ user.lastName }} </td>
+                                  <td> {{ user.email}}</td>
+                                  <td> {{ user.phone}}</td>
                                   <td><a   (click)="confirmSignUp(user._id)"><mat-icon matSuffix color="green">check_cirlce</mat-icon></a>
                                   <a   (click)="deleteUser(user._id)"><mat-icon matSuffix color="red">delete</mat-icon></a></td>
                                 

@@ -1,6 +1,23 @@
-<div class="mycontainer">
-    <full-calendar
-    [options]="calendarOptions"
-    
-  ></full-calendar>
-</div>
+<div class="calendar">
+    <div class="header">
+      <button (click)="previousMonth()">Previous Month</button>
+      <h2>{{ currentMonth | date: 'MMMM yyyy' }}</h2>
+      <button (click)="nextMonth()">Next Month</button>
+    </div>
+    <div class="days-of-week">
+      <div *ngFor="let dayOfWeek of daysOfWeek">{{ dayOfWeek }}</div>
+    </div>
+    <div class="days">
+      <div *ngFor="let week of weeks">
+        <div *ngFor="let day of week">
+          <div class="day" [ngClass]="{ 'empty': !day.date, 'today': isToday(day.date), 'selected': isSelected(day.date) }" (click)="selectDay(day.date)">
+            <div class="date">{{ day.date | date: 'd' }}</div>
+            <div class="events">
+              <div *ngFor="let event of day.events" class="event">{{ event }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

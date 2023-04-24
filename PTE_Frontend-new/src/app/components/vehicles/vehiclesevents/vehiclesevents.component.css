@@ -36,10 +36,48 @@ tbody tr:hover {
 
   
   .calendarcontainer{
-    width: 550px;
+    width: 50%;
     
     display: inline-block;
     vertical-align: top;
     margin-top: 100px;
+  }
+  .vehicle-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .vehicle-box {
+    width: 32%;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .vehicle-box:hover {
+    box-shadow: 0px 0px 10px #ddd;
+  }
+  
+  .vehicle-model {
+    font-weight: bold;
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .vehicle-registration {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .vehicle-type {
+    font-size: 16px;
+  }
+
+  .mat-icon{
+    border-radius: 50%;
   }
   

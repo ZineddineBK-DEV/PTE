@@ -13,6 +13,10 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatRadioModule} from '@angular/material/radio';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 
+
+import { MatTimepickerModule } from 'mat-timepicker';
+
+
 const MaterialComponents =[
     MatButtonModule,
     MatRippleModule,
@@ -26,8 +30,8 @@ const MaterialComponents =[
     MatDatepickerModule,
     MatNativeDateModule,
     MatRadioModule,
-    MatCheckboxModule
-    
+    MatCheckboxModule,
+    MatTimepickerModule,
     
 
     
