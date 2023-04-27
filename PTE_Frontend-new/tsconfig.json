@@ -5,6 +5,7 @@
     "baseUrl": "src",
     "sourceMap": true,
     "declaration": false,
+    "noImplicitAny": false,
     "module": "es2020",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,

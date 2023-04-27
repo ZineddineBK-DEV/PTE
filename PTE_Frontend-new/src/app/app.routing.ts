@@ -3,20 +3,24 @@ import { CommonModule, } from '@angular/common';
 import { BrowserModule  } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
 
-import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { TableListComponent } from './user-management/user-management';
+import { UserProfileComponent } from './user-profile/user-profile.component';
+import { RoomsComponent } from './rooms/rooms.component';
+import { CalendarComponent } from './calendar/calendar.component';
 
 const routes: Routes =[
+
+  { path: 'dashboard',      component: DashboardComponent },
+  { path: 'user-management',     component: TableListComponent },
+  { path :'user-profile/:id', component:UserProfileComponent},
+  { path :'conference-rooms', component:RoomsComponent},
+  { path :'calendar', component:CalendarComponent},
+
   {
     path: '',
     redirectTo: 'dashboard',
     pathMatch: 'full',
-  }, {
-    path: '',
-    component: AdminLayoutComponent,
-    children: [{
-      path: '',
-      loadChildren: () => import('./layouts/admin-layout/admin-layout.module').then(m => m.AdminLayoutModule)
-    }]
   }
 ];
 

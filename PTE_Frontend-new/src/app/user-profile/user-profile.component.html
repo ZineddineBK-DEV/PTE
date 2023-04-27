@@ -1,105 +1,273 @@
-<div class="main-content">
-  <div class="container-fluid">
-      <div class="row">
-          <div class="col-md-8">
-              <div class="card">
-                  <div class="card-header card-header-danger">
-                      <h4 class="card-title">Edit Profile</h4>
-                      <p class="card-category">Complete your profile</p>
-                  </div>
-                  <div class="card-body">
-                      <form>
-                          <div class="row">
-                              <div class="col-md-5">
-                                <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Company (disabled)" disabled>
-                                  </mat-form-field>
-                              </div>
-                              <div class="col-md-3">
-                                  <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Username">
-                                  </mat-form-field>
-                              </div>
-                              <div class="col-md-4">
-                                  <mat-form-field class="example-full-width">
-                                    <input matInput placeholder="Email address" type="email">
-                                  </mat-form-field>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-md-6">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Fist Name" type="text">
-                                </mat-form-field>
-                              </div>
-                              <div class="col-md-6">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Last Name" type="text">
-                                </mat-form-field>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-md-12">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Adress" type="text">
-                                </mat-form-field>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-md-4">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="City" type="text">
-                                </mat-form-field>
-                              </div>
-                              <div class="col-md-4">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Country" type="text">
-                                </mat-form-field>
-                              </div>
-                              <div class="col-md-4">
-                                <mat-form-field class="example-full-width">
-                                  <input matInput placeholder="Postal Code" type="text">
-                                </mat-form-field>
-                              </div>
-                          </div>
-                          <div class="row">
-                              <div class="col-md-12">
-                                <label>About Me</label>
-                                <mat-form-field class="example-full-width">
-                                   <textarea matInput placeholder="Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo."></textarea>
-                                 </mat-form-field>
-                                  <!-- <div class="form-group">
 
-                                      <div class="form-group">
-                                          <label class="bmd-label-floating"> Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</label>
-                                          <textarea class="form-control" rows="5"></textarea>
-                                      </div>
-                                  </div> -->
-                              </div>
-                          </div>
-                          <button mat-raised-button type="submit" class="btn btn-danger pull-right">Update Profile</button>
-                          <div class="clearfix"></div>
-                      </form>
-                  </div>
-              </div>
+<div class="row cv-component" id="print-section">
+  
+  <div class="col-sm-6 ">
+    <!-- *** Start profile image  -->
+    <div class="col-md-6 mx-auto" >
+      <div class="card card-user" style="height: 339px;max-width: 480px;">
+        <div class="profile-image">
+          <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+            <img class="rounded-circle mt-5" width="150px" [src]="imageSrc">
+            <button class="no-print btn-edit-image hidden-btn" (click)="editImage()" style="background-color:#f44336;" mat-mini-fab>
+              <mat-icon>edit</mat-icon>
+            </button>
+            &nbsp;
+            <strong><span class="text-50">{{data.fullName}}</span></strong>
+            <span class="text-50">{{data.title}}</span>
           </div>
-          <div class="col-md-4">
-              <div class="card card-profile">
-                  <div class="card-avatar">
-                      <a href="javascript:void(0)">
-                          <img class="img" src="./assets/img/faces/marc.jpg" />
-                      </a>
-                  </div>
-                  <div class="card-body">
-                      <h6 class="card-category text-gray">CEO / Co-Founder</h6>
-                      <h4 class="card-title">Alec Thompson</h4>
-                      <p class="card-description">
-                          Don't be scared of the truth because we need to restart the human foundation in truth And I love you like Kanye loves Kanye I love Rick Owens’ bed design but the back is...
-                      </p>
-                      <a href="javascript:void(0)" class="btn btn-danger btn-round">Follow</a>
-                  </div>
-              </div>
-          </div>
+        </div>
       </div>
+    </div>
+    <!-- *** end profile image  -->
+
+    <!-- *** Start informations  -->
+    <div class="col-md-6 mx-auto" >
+      <div class="card card-user" style="max-width:480px">
+        <div class="card-body text-dark">
+          <div class="space-y-4">
+            <div class="flex justify-between">
+              <h4 class="block-title">Informations</h4>
+              <button class="no-print btn-edit-image hidden-btn" (click)="editProfile()" style="background-color:#f44336;" mat-mini-fab>
+                <mat-icon>edit</mat-icon>
+              </button>
+            </div>
+            &nbsp;
+            &nbsp;
+            <div class="space-y-4">
+              <div class="flex justify-between">
+                <div class="text-gray-400">Experience</div>
+                <span class="font-medium text-right text-gray-600">{{data.experience}} + years</span>
+              </div>
+    
+              <div class="flex justify-between">
+                <div class="text-gray-400">Department</div>
+                <div class="font-medium text-right text-gray-600 capitalize">{{data.department}}</div>
+              </div>
+              <hr>
+              <div class="flex justify-between">
+                <div class="text-gray-400">Location</div>
+                <div class="font-medium text-right text-gray-600 capitalize">{{data.address}}</div>
+              </div>
+              <div class="flex justify-between">
+                <div class="text-gray-400">Nationality</div>
+                <div class="font-medium text-right text-gray-600 capitalize">{{data.nationality}}</div>
+              </div>
+    
+              <div class="flex justify-between">
+                <div class="text-gray-400">Gender</div>
+                <div class="font-medium text-right text-gray-600 capitalize">{{data.gender}}</div>
+              </div>
+              <div class="flex justify-between">
+                <div class="text-gray-400">Family Situation</div>
+                <div class="font-medium text-right text-gray-600 capitalize">{{data.familySituation}}</div>
+              </div>
+              <hr>
+              <div class="flex justify-between">
+                <div class="text-gray-400">Driving Licence</div>
+                <div class="font-medium text-right text-gray-600 capitalize">
+                
+                  <p>{{ isDrivingLicenseValid() }}</p>
+                </div>
+              </div>
+              
+              
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- *** End informations  -->
   </div>
+
+  <div class="col-sm-6 froms "  >
+    <!-- Satrt Experience Form -->
+    <div class="col-md-6 mx-auto  w-100" >
+      <div class="card card-user" style="max-width:480px" >
+        <div class="card-body">
+  
+          <div class="flex justify-between">
+            <h5 class="card-title">Experience</h5>
+            <button class="no-print btn-edit-image " (click)="AddExperience()" style="background-color:#f44336;" mat-mini-fab><mat-icon>add</mat-icon></button>
+          </div>
+  
+          <div class="section" *ngFor="let item of data.cv.professionnal_career" (mouseenter)="hoveredItem = item" (mouseleave)="hoveredItem = null">
+            <div class="w-full space-y-5" >
+              <div class="item-header" >
+                
+                <div class="space-y-1.5">
+                  <div class="font-medium"><strong>{{item.job}}</strong></div>
+                  <div class="flex space-x-5">
+                    <div class="item-header-info">
+                      <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><g>
+                        <path fill="none" d="M0 0H24V24H0z"></path>
+                        <path d="M15 3c.552 0 1 .448 1 1v2h5c.552 0 1 .448 1 1v13c0 .552-.448 1-1 1H3c-.552 0-1-.448-1-1V7c0-.552.448-1 1-1h5V4c0-.552.448-1 1-1h6zm1 5H8v11h8V8zM4 8v11h2V8H4zm10-3h-4v1h4V5zm4 3v11h2V8h-2z"></path>
+                      </g>
+                    </svg>
+                    <span>{{item.organization}}</span>
+                    <span>
+                      <div class="item-header-info">
+                        <svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        <span>{{item.period}}</span>
+                      </div>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="space-y-2 sm:text-right">
+                <button mat-icon-button class="no-print hidden-btn" *ngIf="hoveredItem === item"  color="warn" (click)="onDeleteItem(data.cv['_id'],'professionnal_career',item['_id'])"><mat-icon>delete_outline</mat-icon></button>
+              </div>
+            </div>
+            <p class="text-gray-600 text-sm">{{item.task_description}}</p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  Start education from -->
+    <div class="col-md-6 mx-auto w-100" >
+
+      <div class="card card-user" style="max-width:480px" >
+      <div class="card-body">
+        <div class="flex justify-between">
+          <h5 class="card-title">Education</h5>
+          <button class="no-print btn-edit-image " (click)="AddEducation()" style="background-color:#f44336;" mat-mini-fab><mat-icon>add</mat-icon></button>
+        </div>
+        <div class="section" *ngFor="let item of data.cv.studies" (mouseenter)="hoveredItem = item" (mouseleave)="hoveredItem = null">
+          <div class=" w-full space-y-5">
+            <div class="item-header items-end">
+              <div class="space-y-1.5">
+                <strong>{{item.diploma}}</strong>
+                <div class="flex space-x-5">
+                  <div class="item-header-info">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1" viewBox="0 0 48 48" enable-background="new 0 0 48 48" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                      <g fill="#37474F">
+                        <rect x="9" y="20" width="30" height="13"></rect>
+                        <ellipse cx="24" cy="33" rx="15" ry="6"></ellipse>
+                      </g>
+                      <path fill="#78909C" d="M23.1,8.2L0.6,18.1c-0.8,0.4-0.8,1.5,0,1.9l22.5,9.9c0.6,0.2,1.2,0.2,1.8,0l22.5-9.9c0.8-0.4,0.8-1.5,0-1.9 L24.9,8.2C24.3,7.9,23.7,7.9,23.1,8.2z"></path>
+                      <g fill="#37474F">
+                        <path d="M43.2,20.4l-20-3.4c-0.5-0.1-1.1,0.3-1.2,0.8c-0.1,0.5,0.3,1.1,0.8,1.2L42,22.2V37c0,0.6,0.4,1,1,1 s1-0.4,1-1V21.4C44,20.9,43.6,20.5,43.2,20.4z"></path>
+                        <circle cx="43" cy="37" r="2"></circle>
+                        <path d="M46,40c0,1.7-3,6-3,6s-3-4.3-3-6s1.3-3,3-3S46,38.3,46,40z"></path>
+                      </g>
+                    </svg>
+                    <span>{{item.establishment}}</span>
+                    <span>
+                      <div class="item-header-info">
+                        <svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        <span>{{item.year}}</span>
+                      </div>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="space-y-1.5 sm:text-right">
+                
+                <button mat-icon-button color="warn" class="no-print hidden-btn" *ngIf="hoveredItem === item" (click)="onDeleteItem(data.cv['_id'],'studies',item['_id'])"><mat-icon>delete_outline</mat-icon></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    <!--  Start projects from -->
+    <div class="col-md-6 mx-auto w-100" >
+      <div class="card card-user" style="max-width:480px" >
+      <div class="card-body">
+        <div class="flex justify-between">
+          <h5 class="card-title">Projects</h5>
+          <button class="no-print btn-edit-image " (click)="AddProject()" style="background-color:#f44336;" mat-mini-fab><mat-icon>add</mat-icon></button>
+        </div>
+        <div class="section" *ngFor="let item of data.cv.projets" (mouseenter)="hoveredItem = item" (mouseleave)="hoveredItem = null">
+          <div class="w-full space-y-5">
+            <div class="item-header">
+              <div class="space-y-1.5">
+                <div class="font-medium"><strong>{{item.title}}</strong></div>
+                <div class="flex space-x-5">
+                  <div class="item-header-info">
+                    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                      <g>
+                        <path fill="none" d="M0 0H24V24H0z"></path>
+                        <path d="M15 3c.552 0 1 .448 1 1v2h5c.552 0 1 .448 1 1v13c0 .552-.448 1-1 1H3c-.552 0-1-.448-1-1V7c0-.552.448-1 1-1h5V4c0-.552.448-1 1-1h6zm1 5H8v11h8V8zM4 8v11h2V8H4zm10-3h-4v1h4V5zm4 3v11h2V8h-2z"></path>
+                      </g>
+                    </svg>
+                  <span>{{item.organization}}</span>
+                </div>
+              </div>
+            </div>
+            <div class="space-y-2 sm:text-right">
+              <div class="item-header-info">
+                <span style="transform: none;">
+                  <button mat-icon-button color="warn" class="no-print hidden-btn" *ngIf="hoveredItem === item" (click)="onDeleteItem(data.cv['_id'],'projets',item['_id'])"><mat-icon>delete_outline</mat-icon></button>
+                </span>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600 text-sm">{{item.description}}</p>
+        </div>
+        </div>
+        
+      </div>
+    </div>
+    </div>
+    <!--  Start certif from -->
+    <div class="col-md-6 mx-auto w-100" >
+      <div class="card card-user" style="max-width:480px" >
+      <div class="card-body">
+        <div class="flex justify-between">
+          <h5 class="card-title">Certifications</h5>
+          <button class="no-print btn-edit-image " (click)="AddCertification()" style="background-color:#f44336;" mat-mini-fab><mat-icon>add</mat-icon></button>
+        </div>
+        <div class="section" *ngFor="let item of data.cv.certifications" (mouseenter)="hoveredItem = item" (mouseleave)="hoveredItem = null">
+
+          <div class=" w-full space-y-5" >
+            <div class="item-header items-end">
+              <div class="space-y-1.5">
+                <strong>{{item.domaine}}</strong>
+                <div class="flex space-x-5">
+                  <div class="item-header-info">
+                    <span>
+                      <div class="item-header-info">
+                        <svg stroke="currentColor" fill="none" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                        </svg>
+                        <span>{{item.year}}</span>
+                      </div>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="space-y-1.5 sm:text-right">
+                <button mat-icon-button class="no-print hidden-btn" *ngIf="hoveredItem === item" color="warn" (click)="onDeleteItem(data.cv['_id'],'certifications',item['_id'])"><mat-icon>delete_outline</mat-icon></button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+    </div> 
+    <button  class="btn no-print btn-primary profile-button" style="margin-bottom:30px;width: 480px;" (click)="downloadCv()">Download Cv</button>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </div>
+  
 </div>
+
+
+
+
+
+
+
+
+ 
+
+
+
+

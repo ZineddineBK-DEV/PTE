@@ -1,0 +1,105 @@
+<div class="search-div">
+  <div class="rounded overflow-hidden w-screen max-w-5xl bg-gray-100 grid grid-cols-5 mx-12 mb-3" style="background-color:#212529;">
+    <div class="p-3 font-sm">
+      <label class="block mb-2 text-sm font-medium text-[#041e62] dark:text-gray-300">Fullname</label>
+      <input id="fullname" [(ngModel)]="searchName" class="bg-gray-50 border border-gray-300 text-[#041e62] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white capitalize">
+    </div>
+    <div class="p-3 font-sm">
+      <label class="block mb-2 text-sm font-medium text-[#041e62] dark:text-gray-300">Title</label>
+      <input name="title" [(ngModel)]="searchTitle" class="bg-gray-50 border border-gray-300 text-[#041e62] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white capitalize">
+    </div>
+    <div class="p-3 font-sm">
+      <label class="block mb-2 text-sm font-medium text-[#041e62] dark:text-gray-300">Department</label>
+      <input [(ngModel)]="searchDepartment" class="bg-gray-50 border border-gray-300 text-[#041e62] text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block  p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white capitalize">
+    </div>
+    <div class="relative">
+      <button mat-icon-button color="warn" *ngIf="searchName || searchTitle || searchDepartment" (click)="clearInput()"><i class="bi bi-x"></i></button>
+    </div>
+  </div>
+</div>
+
+<table class="table table-dark table-sm">
+  <thead class="table-dark">
+    <tr>
+      <th><span>FullName</span></th>
+      <th><span>Role</span></th>
+      <th><span>Department</span></th>
+      <th><span>Title</span></th>
+      <th>Options</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users | filter:searchName | filter:searchTitle | filter:searchDepartment | paginate: { itemsPerPage: 5, currentPage: p }">
+      <td>{{user.fullName }}</td>
+      <td (mouseover)="isHovered = true" (mouseleave)="isHovered = false">
+        <button mat-icon-button *ngIf="isHovered" (click)="onEditRole(user)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        {{user.roles}}
+      </td>
+      <td>{{user.department }}</td>
+      <td>{{user.title }}</td>
+      <td>
+        <button mat-icon-button routerLink="/user-profile/{{user._id}}"><mat-icon>launch</mat-icon></button>
+        <span>&nbsp;&nbsp;&nbsp;</span>
+        <button mat-icon-button color="warn" (click)="onDelete(user['_id'])"><mat-icon>delete_outline</mat-icon></button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="pagination-container" style="display: flex;justify-content: center;margin-top: 20px;">
+  <pagination-controls (pageChange)="p = $event" class="my-pagination-controls"></pagination-controls>
+</div>
+
+
+
+  
+
+<!-- <table class="table table-dark table-sm">
+  <thead class="table-dark">
+    <tr>
+      <th><span>FullName</span></th>
+      <th><span>Role</span></th>
+      <th><span>Department</span></th>
+      <th><span>Title</span></th>
+      <th>Options</th>
+      </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users | filter:searchName | filter:searchTitle | filter:searchDepartment">
+      <td>{{user.fullName }}</td>
+      <td (mouseover)="isHovered = true" (mouseleave)="isHovered = false">
+        <button mat-icon-button *ngIf="isHovered" (click)="onEditRole(user)">
+          <mat-icon>edit</mat-icon>
+        </button>
+        {{user.roles}}
+      </td>
+      <td>{{user.department }}</td>
+      <td>{{user.title }}</td>
+      <td>
+        <button mat-icon-button routerLink="/user-profile/{{user._id}}"><mat-icon>launch</mat-icon></button>
+        <span>&nbsp;&nbsp;&nbsp;</span>
+        <button mat-icon-button color="warn" (click)="onDelete(user['_id'])"><mat-icon>delete_outline</mat-icon></button>
+      </td>
+      
+  </tbody>
+</table> -->
+
+<!-- <table mdbTable #mdbTable="mdbTable" class="table">
+  <thead>
+    <tr>
+      <th *ngFor="let headElement of headElements" scope="col">{{headElement}}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let element of mdbTable.getDataSource()" mdbTablePagination [hidden]="mdbTable.getDataSource().length === 0">
+      <td>{{element.id}}</td>
+      <td>{{element.first}}</td>
+      <td>{{element.last}}</td>
+      <td>{{element.handle}}</td>
+    </tr>
+  </tbody>
+</table> -->
+
+

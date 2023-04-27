@@ -1,0 +1,42 @@
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"> -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"> -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://code.jquery.com/jquery-3.3.1.slim.min.js">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<button class="close" mat-button (click)="onClose()">X</button>
+<div class="container">  
+    <form #experienceForm="ngForm" (ngSubmit)="submit(experienceForm.value)">
+      <fieldset>
+        <legend>Experience</legend>
+        
+        <div class="form-group">
+          <label for="nom">Organization</label>
+          <input name="organization" type="text" class="form-control" ngModel="" placeholder="Enter the organization's name" value="joe" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="job">Job</label>
+          <input name="job" type="text" class="form-control" ngModel="" placeholder="Enter the job" value="joe">
+        </div>
+
+        <div class="form-group">
+            <label for="Period_start">Start period(yyyy)</label>
+            <input type="number" #period_start="ngModel" name="period_start" pattern="^\d{4}$" [class.is-invalid]="" class="form-control" ngModel="" placeholder="Enter Period" min="1900" max="2099" step="1" required>
+            <!-- <input type="number" min="1900" max="2099" step="1" placeholder="Start year" required /> -->
+            <small class="text-danger" [class.d-none]="period_start.valid || period_start.untouched">Period must be 4 digits</small>
+          </div>
+
+        <div class="form-group">
+          <label for="Period_end">End period(yyyy)</label>
+          <input type="number" name="period_end" pattern="^\d{4}$" [class.is-invalid]="" class="form-control" ngModel="" placeholder="Enter Period" min="1901" max="2099" step="1" value="2000" required>
+        </div>
+        <div class="form-group">
+          <label for="bio">Task description</label>
+          <textarea name="task_description" class="form-control" ngModel="" rows="3" ></textarea>
+        </div>
+        
+      </fieldset>
+      <button [disabled]="experienceForm.form.invalid" class="btn-add"type="submit">Add</button>
+      <!-- <button [disabled]="experienceForm.form.invalid" class="btn-add"type="submit">Add</button> -->
+    </form>
+</div>
