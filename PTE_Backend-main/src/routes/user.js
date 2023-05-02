@@ -30,6 +30,7 @@ router.post("/validateCode", userCtr.validateCode);
 router.post("/changePswdAutorisation/:id", userCtr.changePswdAutorisation);
 router.patch("/change-psw/:id", userCtr.changePswd);
 
+
 router.get("/getall", userCtr.getAllUsers);
 
 

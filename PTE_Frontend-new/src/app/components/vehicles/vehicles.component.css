@@ -1,0 +1,32 @@
+.main-content{
+    width: 900px;
+    margin-left : 20px;
+}
+.mat-raised-button{
+    margin: 2px;
+    width : 80px;
+    text-align: center;
+}
+th{
+    color: black;
+    font-size: larger;
+    font-weight: bolder;
+    
+}
+.mat-form-field{
+    width: 250px;
+}
+.mat-raised-button{
+    width: 150px;
+}
+
+td a{
+ margin-left: 17px;
+}
+.material-icons:hover{
+    cursor: pointer;
+
+}
+.material-icons{
+    border-radius: 50%;
+}

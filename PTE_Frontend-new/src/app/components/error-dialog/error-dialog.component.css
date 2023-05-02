@@ -1,0 +1,14 @@
+:host {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mat-dialog-title {
+    margin: 0 0 1rem 0;
+    font-size: 1.5rem;
+  }
+  
+  .mat-raised-button {
+    margin-left: 78px;
+  }
+  

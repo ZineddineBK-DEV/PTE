@@ -20,6 +20,13 @@ router.delete(
   vehicleCtr.deleteVehicle
 );
 
+router.patch(
+  "/update/:id",
+  
+  authMiddleware,checkAdminMiddleware,
+  vehicleCtr.UpdateVehicle
+);
+
 router.get("/search", authMiddleware, vehicleCtr.searchVehicle);
 /**Events Managment ********/
 router.get("/events", authMiddleware, vehicleCtr.getVehicleEvents);

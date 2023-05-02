@@ -1,7 +1,7 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { ComponentsModule } from './components/components.module';
@@ -53,18 +53,16 @@ import { MatMomentDatetimeModule } from '@mat-datetimepicker/moment';
 
 import { DateTimePickerModule } from "@syncfusion/ej2-angular-calendars";
 import { EventDtailsComponent } from './rooms/event-details/event-dtails.component';
+import { AuthService } from './auth.service';
+import { JwtInterceptor } from './interceptor';
+
 
 @NgModule({
   imports: [
-    DateTimePickerModule,
-    
     DateInputsModule,
     MatMomentDatetimeModule,
     MatDatetimepickerModule,
-    NgxMatDatetimePickerModule,
-    MatDatepickerModule ,
     NgxMatTimepickerModule,
-    MatNativeDateModule,
     FullCalendarModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -72,15 +70,13 @@ import { EventDtailsComponent } from './rooms/event-details/event-dtails.compone
     HttpClientModule,
     RouterModule,
     AppRoutingModule,
-    ComponentsModule,
-    
     MatTableModule,
     MatSortModule,
     MatListModule,
     MatPaginatorModule,
     MatIconModule,
-    MatDialogModule,MatSnackBarModule,
-    AngularPaginatorModule,
+    MatDialogModule,
+    MatSnackBarModule,
     MatInputModule,
     MatSelectModule,
     MatButtonModule,
@@ -88,21 +84,23 @@ import { EventDtailsComponent } from './rooms/event-details/event-dtails.compone
     MatTooltipModule,
     MatGridListModule,
     MatRadioModule,
-    MatDatepickerModule,
     MatToolbarModule,
-    MdbFormsModule,
-    Ng2SearchPipeModule,
-    BsDatepickerModule,
-    FileUploadModule,
+    ComponentsModule,
+    MatDatepickerModule,
+    DateTimePickerModule,
+    NgxMatDatetimePickerModule,
+    MatNativeDateModule,
+    NgxPaginationModule,
     NgxPrintModule,
-    NgxPaginationModule
-  
-  
+    MdbFormsModule,
+    FileUploadModule,
+    Ng2SearchPipeModule,
+    AngularPaginatorModule,
+    BsDatepickerModule,
   ],
   declarations: [
     AppComponent,
     TableListComponent,
-    UserProfileComponent,
     ExperienceFormComponent,
     ProjectFormComponent,
     ProfileImageComponent,
@@ -115,10 +113,16 @@ import { EventDtailsComponent } from './rooms/event-details/event-dtails.compone
     AddRoomComponent,
     RoomEventsComponent,
     EventDtailsComponent,
-
-
+    AppComponent,
+    UserProfileComponent,
+    
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [AuthService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: JwtInterceptor,
+    multi: true
+  }
+  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

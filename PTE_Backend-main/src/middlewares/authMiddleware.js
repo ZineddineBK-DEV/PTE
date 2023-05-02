@@ -17,7 +17,7 @@ const authMiddleware = asyncHandler(async (req, res, next) => {
       const decoded = jwt.verify(token, "secret_this_should_be_longer");
 
       // Get user from the token
-      req.user = await User.findById(decoded.id);
+      req.user = await User.findById(decoded._id);
       res.locals.user = req.user;
       next();
     } catch (error) {
@@ -26,6 +26,11 @@ const authMiddleware = asyncHandler(async (req, res, next) => {
     }
   }
 
+  if (!token) {
+    res.status(401);
+    throw new Error("Not authorized, no token");
+  }})
+ 
    if (!token) {
      res.status(401);
      throw new Error("Not authorized, no token");

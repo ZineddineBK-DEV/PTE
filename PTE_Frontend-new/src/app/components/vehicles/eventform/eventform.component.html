@@ -1,0 +1,52 @@
+<form [formGroup]="eventform">
+    <mat-form-field>
+      <mat-label>Title</mat-label>
+      <input matInput placeholder="title" formControlName="title">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Start</mat-label>
+      <input matInput [matDatepicker]="startPicker" formControlName="start" required #start>
+            <mat-datepicker-toggle matSuffix [for]="startPicker"></mat-datepicker-toggle>
+            <mat-datepicker #startPicker></mat-datepicker>
+            
+      </mat-form-field>
+
+  
+      <mat-form-field>
+        <mat-label>End</mat-label>
+        <input matInput [matDatepicker]="endPicker" formControlName="end" required #end>
+        <mat-datepicker-toggle matSuffix [for]="endPicker"></mat-datepicker-toggle>
+        <mat-datepicker #endPicker></mat-datepicker>
+
+        
+      </mat-form-field>
+       
+
+      <mat-form-field>
+      <input matTimepicker formControlName="time" required #time placeholder="Please select time...">
+      <mat-icon matSuffix>access_time</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field>
+        <mat-label>Driver</mat-label>
+        <mat-select formControlName="driver">
+          <mat-option *ngFor="let driver of drivers" [value]="driver">{{ driver.fullName }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    
+    <mat-form-field>
+      <mat-label>Destination</mat-label>
+      <input matInput placeholder="destination" formControlName="destination">
+    </mat-form-field>
+  
+
+     
+  
+    <div class="button-row">
+      <button mat-raised-button color="orange" (click)="save()" >Save</button>
+      <button mat-raised-button (click)="cancel()">Cancel</button>
+    </div>
+  </form>
+  

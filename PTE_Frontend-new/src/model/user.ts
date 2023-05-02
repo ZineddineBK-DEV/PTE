@@ -1,28 +1,25 @@
-
-
 export class User{
-    constructor(
-
-        public image:string,
-        public id :string ,
-        public fullName:string,
-        public email:string,
-        public phone:string,
-        public password:string,
-        public roles:string,
-        public familySituation:String,
-        public DateOfBirth:Date,
-        public address:String,
-        public department:String,
-        public drivingLicense:Boolean ,
-        public gender:String ,
-        public isEnabled:Boolean,
-        public experience:Number,
-        public hiringDate:Date,
-        public title:String, 
-        public cv :string,
-        //public cv: { type: mongoose.Schema.Types.ObjectId, ref: "Cv" },
-        //public career: { type: mongoose.Schema.Types.ObjectId, ref: "Career" },
-
+    constructor (
+    public    token: string,
+    public   expiresIn: number,
+    public  firstName: string,
+    public lastName:string,
+    public email :string,
+    public image: string,
+    public _id: string,
+    public  roles: string,
+    public DateOfBirth: Date,
+    public password: string,
+    public phone : number,
+    public nationality: string,
+    public familySituation: string,
+    public address: string,
+    public department:string,
+    public drivingLicense: boolean,
+    public gender: string,
+    public experience: number,
+    public hiringDate: Date,
+    public title : string,
+    
     ){}
 }

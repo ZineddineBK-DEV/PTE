@@ -1,0 +1,32 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="card-header card-header-danger">
+            <h4 class="card-title">Vehicles</h4>
+          </div>
+          <div class="card-body">
+            <mat-form-field>
+              <mat-label></mat-label>
+              <a (click)="search()">Search</a>
+              <input matInput [(ngModel)]="searchText" type="text" placeholder="Enter search text">
+            </mat-form-field>
+            <div class="vehicle-container">
+              <div class="vehicle-box" *ngFor="let vehicle of vehicles" (click)="onVehicleClick(vehicle._id)">
+                <div class="car-icon"><mat-icon matSuffix >garage</mat-icon></div>
+                <div class="vehicle-model">{{ vehicle.model }}</div>
+                <div class="vehicle-registration">{{ vehicle.registration_number }}</div>
+                <div class="vehicle-type">{{ vehicle.type }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="calendarcontainer" *ngIf="showCalendar">
+  <full-calendar #calendar [options]="calendarOptions" (dateClick)="dateClick()"></full-calendar>
+</div>

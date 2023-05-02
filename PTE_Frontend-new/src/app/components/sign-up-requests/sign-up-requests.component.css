@@ -1,0 +1,36 @@
+.main-content{
+    width: 900px;
+    margin-left : 20px;
+}
+.mat-raised-button{
+    margin: 2px;
+    width : 80px;
+    text-align: center;
+}
+th{
+    color: black;
+    font-size: larger;
+    font-weight: bolder;
+    
+}
+img{
+    width : 54px;
+    height: 54px;
+    border-radius: 50%;
+    margin: 10px;
+
+
+}
+.material-icons {
+   margin-left: 14px;
+    border-radius: 50%;
+}
+.material-icons:hover{
+    cursor: pointer;
+
+}
+
+.table > tbody > tr > td{
+    padding: 25px 8px;
+    vertical-align: middle;
+}

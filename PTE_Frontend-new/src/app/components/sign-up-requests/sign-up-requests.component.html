@@ -1,0 +1,48 @@
+<div class="main-content">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-md-12">
+              <div class="card">
+                  <div class="card-header card-header-danger">
+                      <h4 class="card-title ">Request list</h4>
+                  </div>
+                  <div class="card-body">
+                      <div class="table-responsive">
+                          <table class="table">
+                              <thead class=" text-primary">
+                                  <th>Image</th>
+                                <th>
+                                      First name
+                                  </th>
+                                  <th>
+                                      Last name
+                                  </th>
+                                   <th>
+                                    Email
+                                   </th>
+                                   <th>
+                                    Phone number
+                                   </th>
+
+                                  <th>Manage request</th>
+                                  
+            
+                              </thead>
+                              <tbody>
+                                <tr *ngFor="let user of users" >
+                                    <img  [src]="'http://localhost:3001/images/'+ user.image">
+                                    <td>{{ user.firstName }} </td> 
+                                  <td>{{ user.lastName }} </td>
+                                  <td> {{ user.email}}</td>
+                                  <td> {{ user.phone}}</td>
+                                  <td><a   (click)="confirmSignUp(user._id)"><mat-icon matSuffix color="green">check_cirlce</mat-icon></a>
+                                  <a   (click)="deleteUser(user._id)"><mat-icon matSuffix color="red">delete</mat-icon></a></td>
+                                
+                                
+                        
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>

@@ -1,0 +1,57 @@
+<div class="main-content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header card-header-danger">
+                        <h4 class="card-title ">Vehicles</h4>
+                        
+                    </div>
+                    
+                    <div class="card-body">
+                        <mat-form-field>
+                            <mat-label></mat-label>
+                            
+                            <input matInput (ngModelChange)="searchVehicle(key.value)" #key="ngModel" ngModel name="key" id="searchName" type="text" placeholder="Enter search text">
+                          </mat-form-field>
+                            
+                        
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead class=" text-primary">
+                                    
+                                  
+                                    
+                                  <th>Model</th>
+                                  
+                                  <th>Registration number</th>
+                                        
+                                  <th>Type</th>
+
+                                  <th>Manage</th>
+
+                                      
+                              </thead>
+                                <tbody>
+                                 
+                                    <tr *ngFor="let vehicle of vehicles" >
+                                     <td>{{ vehicle.model }} </td>
+                                     <td>{{ vehicle.registration_number }} </td> 
+                                      <td> {{ vehicle.type }}</td>
+                                      <td>  <a (click)="deleteVehicle(vehicle._id)"> <mat-icon matSuffix color="red">delete</mat-icon></a> 
+                                        <a><mat-icon matSuffix (click)="openupdateForm(vehicle._id)">edit</mat-icon></a>
+                                    
+                                    </td>
+                                       
+                                      
+                                      
+                                    
+                                  
+                          
+                                </tbody>
+                            </table>
+                            <a mat-raised-button color="orange" (click)="openMiniForm()">Add vehicle</a>
+                        </div>
+                    </div>
+                </div>
+            </div>

@@ -1,0 +1,20 @@
+
+<div class="mycontainer">
+    <div class="center">
+        
+        <form  [formGroup]="FormCode"  >
+          <h1>Validation code sent successfully !</h1>
+            <mat-form-field>
+                <mat-label>Enter validation code to change password</mat-label>
+                <mat-icon matSuffix >lock_open</mat-icon>
+                <input matInput type="text" formControlName="code" #code> 
+              </mat-form-field>
+            
+          
+          <button type="submit" (click)="validateCode()">Verify</button>
+              
+          
+          
+        </form>
+      </div>
+  </div>

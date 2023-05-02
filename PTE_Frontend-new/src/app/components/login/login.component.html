@@ -1,0 +1,30 @@
+  
+
+  
+
+<div class="mycontainer"  >
+  <div class="center">
+      <h1>Login</h1>
+      <form [formGroup]="loginForm"   >
+          <mat-form-field>
+              <mat-label>Email</mat-label>
+              <mat-icon matSuffix >mail_outline</mat-icon>
+              <input matInput type="email" formControlName="email" required #email> 
+            </mat-form-field>
+          <mat-form-field>
+              <mat-label>Password</mat-label>
+              <mat-icon matSuffix >lock_open</mat-icon>
+              <input matInput type="password" formControlName="password" required> 
+            </mat-form-field>
+        <div class="pass" (click)="forgotPassword()"><a>Forgot Password?</a></div>
+        <button type="submit" (click)="onSubmit()">Login</button>
+            
+        <!-- <mat-error id="loginMessage" *ngIf="loginFailed">Login Failed</mat-error>  -->
+        <div class="signup_link">
+          Not a member? <a routerLink="/signup">Signup</a>
+        </div>
+      </form>
+    </div>
+</div>
+
+  

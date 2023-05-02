@@ -12,7 +12,7 @@ const checkAdminMiddleware = asyncHandler(async (req, res, next) => {
   } catch (error) {
     res.status(401);
     throw new Error("You are not authorized to access this page");
-  }
-});
+  }})
+
 
 module.exports = { checkAdminMiddleware };
